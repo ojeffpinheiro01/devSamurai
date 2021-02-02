@@ -49,5 +49,5 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 <a href="https://codesandbox.io/u/ojeffoinheiro" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codesandbox.svg" alt="maykbrito" height="30" width="40" /></a>
 </p>
 
->Este projeto foi desenvolvido com ❤️ por **[@Jéferson Pinheiro](https://github.com/ojeffpinheiro01/)**, com o instrutor **[@MaykBrito](https://linkedin.com/in/maykbrito)**, durante a **[Maratona Discover](https://maratonadiscover.rocketseat.com.br/inscricao/)** da **[Rocketseat](https://www.linkedin.com/school/rocketseat/about/)** 💜. <br> 
+>Este projeto foi desenvolvido com ❤️ por **[@Jéferson Pinheiro](https://www.linkedin.com/in/jeferson-pinheiro/)**, com o instrutor **[Carlos Eduardo](https://www.linkedin.com/in/carlos-eduardo-santos-oliveira-59255a110/)**. <br> 
 Se te ajudou, dá ⭐, vai me ajudar também 😉
