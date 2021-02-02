@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;600;700;800;900&display=swap');
 @import './buttons.css';
 @import './navbar.css';
+@import './background.css';
+@import './inputs.css';
 
 /* Configurações de cores */
 :root {
