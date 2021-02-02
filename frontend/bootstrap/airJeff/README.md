@@ -15,8 +15,8 @@ Projeto de um website para uma agência de turismo
 # :eye: Preview
 ## :desktop_computer: Web
 <p align="center" >
-  <img src="https://user-images.githubusercontent.com/60162736/106643761-f2d54780-6568-11eb-9525-f969740c2652.png" alt="dev.finance$" width="750px"><br />
-  <img src="https://user-images.githubusercontent.com/60162736/106643419-78a4c300-6568-11eb-9780-0d55e7755a3e.png" alt="dev.finance$" width="750px"><br />
+  <img src="https://user-images.githubusercontent.com/60162736/106643761-f2d54780-6568-11eb-9525-f969740c2652.png" alt="home" width="750px"><br />
+  <img src="https://user-images.githubusercontent.com/60162736/106643419-78a4c300-6568-11eb-9780-0d55e7755a3e.png" alt="banner" width="750px"><br />
 </p>
 
 
