@@ -5,6 +5,8 @@
 @import './inputs.css';
 @import './position.css';
 @import './colors.css';
+@import './carousel.css';
+@import './assessments.css';
 
 /* Configurações de cores */
 :root {
