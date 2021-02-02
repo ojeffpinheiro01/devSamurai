@@ -10,7 +10,7 @@
 </p>
 
 # :book: Sobre o projeto 
-Projeto de um website para uma agência de turismo 
+Projeto de um website para uma agência de turismo com objetivo de mostrar os hotéis disponíveis, preços e promoções e possíbilitar o usuário a pré-reservar um quarto
 
 # :eye: Preview
 ## :desktop_computer: Web
