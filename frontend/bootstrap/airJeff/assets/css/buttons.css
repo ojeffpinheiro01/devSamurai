@@ -1,0 +1,13 @@
+.btn-orange {
+    color: var(--bg-white);
+    background-color: var(--bg-orange);
+    outline: none;
+    box-shadow: none;
+    font-size: 1rem;
+    font-family: 'Ruda', sans-serif;
+    font-weight: 400;
+}
+.btn-orange:hover {
+    color: var(--bg-white);
+    background-color: var(--bg-orange-hover);
+}
