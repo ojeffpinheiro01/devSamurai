@@ -1,0 +1,731 @@
+.c-10 {
+  width: 10%;
+  border-radius: 6px;
+  background-color: #29ae81;
+}
+
+.c-20 {
+  width: 20%;
+  border-radius: 6px;
+  background-color: #29ae81;
+}
+
+.c-30 {
+  width: 30%;
+  border-radius: 6px;
+  background-color: #29ae81;
+}
+
+.c-40 {
+  width: 40%;
+  border-radius: 6px;
+  background-color: #29ae81;
+}
+
+.c-50 {
+  width: 50%;
+  border-radius: 6px;
+  background-color: #29ae81;
+}
+
+.c-60 {
+  width: 60%;
+  border-radius: 6px;
+  background-color: #29ae81;
+}
+
+.c-70 {
+  width: 70%;
+  border-radius: 6px;
+  background-color: #29ae81;
+}
+
+.c-80 {
+  width: 80%;
+  border-radius: 6px;
+  background-color: #29ae81;
+}
+
+.c-90 {
+  width: 90%;
+  border-radius: 6px;
+  background-color: #29ae81;
+}
+
+.c-100 {
+  width: 100%;
+  border-radius: 6px;
+  background-color: #29ae81;
+}
+
+.m-auto {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+}
+
+.webview {
+  width: 100%;
+  margin: auto;
+}
+.webview .intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #29ae81;
+  color: #fff;
+}
+.webview .intro .container h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+.webview .intro .container p {
+  font-size: 1rem;
+  text-align: center;
+}
+.webview .intro .container .m-auto-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 8px;
+}
+.webview .intro .container .m-auto-btn .btn-portfolio {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  width: 160px;
+  height: 35px;
+  border-radius: 6px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.webview .about {
+  width: 100%;
+}
+.webview .about .container {
+  padding: 10px;
+}
+.webview .about .container .title {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+.webview .about .container .title h2 {
+  font-family: "Ruda", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #29ae81;
+}
+.webview .about .container .row {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.webview .about .container .row .c-photo {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.webview .about .container .row .c-photo img {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.webview .about .container .row .c-descripton {
+  width: 100%;
+}
+.webview .about .container .row .c-descripton p {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.webview .about .container .row .c-descripton .skills {
+  width: 100%;
+}
+.webview .about .container .row .c-descripton .skills .h-item {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.webview .about .container .row .c-descripton .skills .h-item .h-title {
+  width: 100%;
+}
+.webview .about .container .row .c-descripton .skills .h-item .h-title h3 {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.webview .about .container .row .c-descripton .skills .h-item .h-c-percentage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  min-height: 25px;
+}
+.webview .about .container .row .c-descripton .skills .h-item .h-c-percentage .h-percentage-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 6px;
+  border-radius: 6px;
+}
+.webview .about .container .row .c-descripton .skills .h-item .h-c-percentage .h-percentage-container .h-percentage-knowledge {
+  height: 100%;
+}
+.webview .about .container .row .c-descripton .skills .h-item .h-c-percentage .h-percentage-container span {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.webview .services {
+  width: 100%;
+  background-color: #29ae81;
+  color: #fff;
+}
+.webview .services .container {
+  padding: 10px;
+}
+.webview .services .container .s-title {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.webview .services .container .s-title h2 {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+}
+.webview .services .container .s-carrousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.webview .services .container .s-carrousel .s-carrousel-container {
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+}
+.webview .services .container .s-carrousel .s-carrousel-container .s-carrousel-item {
+  min-height: 260px;
+  background-color: #fff;
+  color: #29ae81;
+}
+.webview .services .container .s-carrousel .s-carrousel-container .s-carrousel-item .title {
+  width: 100%;
+  padding: 10px;
+}
+.webview .services .container .s-carrousel .s-carrousel-container .s-carrousel-item .title p {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.webview .services .container .s-carrousel .s-carrousel-container .s-carrousel-item .body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 180px;
+}
+.webview .services .container .s-carrousel .s-carrousel-container .s-carrousel-item .body .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.webview .services .container .s-carrousel .s-carrousel-container .s-carrousel-item .body .icon span i {
+  font-size: 38px;
+}
+.webview .services .container .s-carrousel .s-carrousel-container .s-carrousel-item .body .text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 10px;
+}
+.webview .services .container .s-carrousel .s-carrousel-container .s-carrousel-item .body .text p {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.webview .projects {
+  width: 100%;
+  min-height: 100vh;
+}
+.webview .projects .container {
+  padding: 10px;
+}
+.webview .projects .container .p-title {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.webview .projects .container .p-title h2 {
+  font-family: "Ruda", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #29ae81;
+}
+.webview .projects .container .p-projects {
+  width: 100%;
+}
+.webview .projects .container .p-projects .project {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 10px;
+}
+.webview .projects .container .p-projects .project .photos {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+.webview .projects .container .p-projects .project .photos .img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.webview .projects .container .p-projects .project .photos .img:hover .description {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background-color: #29AE81;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+}
+.webview .projects .container .p-projects .project .photos .img:hover .description p {
+  display: block;
+  color: #fff;
+}
+.webview .projects .container .p-projects .project .photos .img img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.webview .projects .container .p-projects .project .photos .description {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 50px;
+}
+.webview .projects .container .p-projects .project .photos .description p {
+  display: none;
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  color: #fff;
+}
+
+.webview .contact {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.webview .contact .container {
+  padding: 10px;
+}
+.webview .contact .container .p-title {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.webview .contact .container .p-title h2 {
+  font-family: "Ruda", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #29ae81;
+}
+.webview .contact .container .form {
+  width: 100%;
+}
+.webview .contact .container .form form {
+  width: 100%;
+}
+.webview .contact .container .form form .form-group {
+  width: 100%;
+}
+.webview .contact .container .form form .form-group .controls {
+  width: 100%;
+  min-height: 70px;
+}
+.webview .contact .container .form form .form-group .controls label {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  font-weight: bold;
+  color: #29ae81;
+}
+.webview .contact .container .form form .form-group .controls input {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid #29ae81;
+}
+.webview .contact .container .form form .form-group .controls input:active {
+  border: 1px solid #29ae81;
+  border-radius: 2px;
+}
+.webview .contact .container .form form .form-group .controls input:focus {
+  border: 1px solid #29ae81;
+  border-radius: 2px;
+}
+.webview .contact .container .form form .form-group .controls textarea {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  height: 180px;
+  padding: 10px;
+  border: 1px solid #29ae81;
+  outline: none;
+}
+.webview .contact .container .form form .form-group .controls textarea:active {
+  border: 1px solid #29ae81;
+  border-radius: 2px;
+}
+.webview .contact .container .form form .form-group .controls textarea:focus {
+  border: 1px solid #29ae81;
+  border-radius: 2px;
+}
+.webview .contact .container .form form .form-group .btn-form-send {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  margin-top: 20px;
+  width: 140px;
+  height: 40px;
+  border: none;
+  background-color: #29ae81;
+  color: #fff;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.webview .contact .container .form form .form-group .btn-form-send:hover {
+  background-color: #29ae81;
+}
+.webview .contact .container .form form .form-group .btn-form-send:active {
+  background-color: #29ae81;
+}
+
+.webview .container-whatsapp {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  padding: 10px;
+  min-width: 40px;
+  min-height: 40px;
+  z-index: 9999;
+}
+.webview .container-whatsapp .btn-whatsapp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #29ae81;
+}
+.webview .container-whatsapp .btn-whatsapp i {
+  font-size: 2rem;
+  color: #fff;
+}
+.webview .container-whatsapp .btn-whatsapp:hover {
+  background-color: #1E8865;
+  border: 2px solid #fff;
+}
+
+.webview footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #29ae81;
+}
+.webview footer span {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  color: #fff;
+}
+
+@media only screen and (min-width: 425px) {
+  .webview .intro .container h1 {
+    font-size: 2.4rem;
+  }
+  .webview .intro .container p {
+    font-size: 1.2rem;
+  }
+
+  .webview .about .container .row {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+  .webview .about .container .row .c-photo {
+    padding: 10px;
+  }
+  .webview .about .container .row .c-descripton {
+    padding: 10px;
+  }
+  .webview .about .container .row .c-descripton p {
+    font-size: 1.2rem;
+  }
+  .webview .about .container .row .c-descripton .skills .skill-item .h-title h3 {
+    font-size: 1.2rem;
+  }
+  .webview .about .container .row .c-descripton .skills .skill-item .h-c-percent .h-percent-container span {
+    font-size: 1.2rem;
+  }
+
+  .webview .services .container .s-carrousel {
+    margin-bottom: 40px;
+    height: 400px;
+  }
+
+  .webview .projects .container .p-title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .webview .projects .container .p-projects .project {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+  .webview .projects .container .p-projects .project .photos {
+    height: 100%;
+  }
+  .webview .projects .container .p-projects .project .photos img {
+    position: relative;
+  }
+  .webview .projects .container .p-projects .project .photos img:hover .description {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #29ae81;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+  }
+  .webview .projects .container .p-projects .project .photos img:hover .description p {
+    display: block;
+    color: #fff;
+  }
+
+  .webview .contact .container .p-title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .webview .contact .container .form form .form-group {
+    display: flex;
+    flex-direction: row;
+  }
+  .webview .contact .container .form form .form-group .controls {
+    padding: 5px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .webview .intro .container h1 {
+    font-size: 3rem;
+  }
+  .webview .intro .container p {
+    font-size: 1.6rem;
+  }
+  .webview .intro .container .m-auto-btn {
+    margin-top: 10px;
+  }
+  .webview .intro .container .m-auto-btn .btn-portfolio {
+    font-family: "Ruda", sans-serif;
+    font-weight: 400;
+    width: 180px;
+    height: 40px;
+    cursor: pointer;
+  }
+  .webview .intro .container .m-auto-btn .btn-portfolio:hover {
+    background-color: #29ae81;
+    border-radius: 6px;
+    border: 1px solid #29ae81;
+  }
+
+  .webview .about .container {
+    width: 90%;
+    margin: auto;
+  }
+  .webview .about .container .title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .webview .about .container .title h2 {
+    font-size: 2rem;
+  }
+  .webview .about .container .row {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin-bottom: 40px;
+  }
+  .webview .about .container .row .c-photo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+  }
+  .webview .about .container .row .c-photo img {
+    width: 100%;
+    max-width: 400px;
+  }
+  .webview .about .container .row .c-descripton {
+    padding: 10px;
+    margin-top: 0px;
+  }
+  .webview .about .container .row .c-descripton p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+  }
+  .webview .about .container .row .c-descripton .skills .skill-item .h-title {
+    width: 100%;
+  }
+  .webview .about .container .row .c-descripton .skills .skill-item .h-title h3 {
+    font-size: 1.2rem;
+  }
+  .webview .about .container .row .c-descripton .skills .skill-item .h-c-percent .h-percent-container span {
+    font-size: 1.2rem;
+  }
+
+  .webview .services .container {
+    width: 90%;
+    margin: auto;
+  }
+  .webview .services .container .s-title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .webview .services .container .s-title h2 {
+    font-size: 2rem;
+  }
+  .webview .services .container .s-carrousel {
+    width: 96%;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+
+  .webview .projects {
+    min-height: auto;
+  }
+  .webview .projects .container {
+    width: 90%;
+    margin: auto;
+  }
+  .webview .projects .container .p-title h2 {
+    font-size: 2rem;
+  }
+  .webview .projects .container .p-projects {
+    padding: 10px;
+  }
+  .webview .projects .container .p-projects .project {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: 1fr;
+    grid-auto-rows: 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+  .webview .projects .container .p-projects .project .photos {
+    height: 100%;
+  }
+  .webview .projects .container .p-projects .project .photos .img {
+    position: relative;
+  }
+  .webview .projects .container .p-projects .project .photos .img:hover .description {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #29ae81;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+  }
+  .webview .projects .container .p-projects .project .photos .img:hover .description p {
+    display: block;
+    color: #fff;
+  }
+
+  .webview .contact {
+    margin-bottom: 50px;
+  }
+  .webview .contact .container {
+    width: 90%;
+    margin: auto;
+  }
+  .webview .contact .container .p-title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .webview .contact .container .p-title h2 {
+    font-size: 2rem;
+  }
+  .webview .contact .container .form form .form-group {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+  .webview .contact .container .form form .form-group .controls {
+    padding: 5px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
