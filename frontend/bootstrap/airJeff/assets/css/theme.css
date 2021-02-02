@@ -3,6 +3,8 @@
 @import './navbar.css';
 @import './background.css';
 @import './inputs.css';
+@import './position.css';
+@import './colors.css';
 
 /* Configurações de cores */
 :root {
