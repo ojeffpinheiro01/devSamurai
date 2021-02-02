@@ -1,10 +1,3 @@
-# :eye: Preview
-## :desktop_computer: Web
-<p align="center" ></p>
-
-# :earth_americas: Deploy
-### Front-end WEB: [Netlify]()<br />
-
 # :computer: Technology
 This project was developed with the following technologies:
 - HTML;
