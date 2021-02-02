@@ -1,0 +1,202 @@
+/* Tablets 768px  */
+@media screen and (max-width: 768px){
+    .container .skills .item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Mobile 425px  */
+@media screen and (max-width: 500px){
+    .container .name {
+        margin-top: 10%;
+        margin-bottom: 50px;
+    }
+    .container .name h1 {
+        font-size: 28px;
+    }
+    .container .name h2 {
+        font-size: 22px;
+    }
+
+    /* about */
+    .container .about {
+        width: 100%;
+        min-height: 100px;
+        margin-bottom: 50px;
+    }
+    .container .about .title-about h2 {
+        margin-top: 5%;
+        font-size: 22px;
+    }
+    .container .about .paragraf {
+        font-size: 18px;
+    }
+
+    /* experience */
+    .container .experience .title-experience h2 {
+        margin-top: 5%;
+        font-size: 22px;
+    }
+    .container .experience .items .item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 220px;
+        margin-bottom: 50px;
+    }
+    .container .experience .items .item .work {
+        min-width: 100%;
+        min-height: 80px;
+    }
+    .container .experience .items .item .description {
+        min-width: 100%;
+        min-height: 100px;
+    }
+    .container .experience .items .item .description h2 {
+        margin-bottom: 20px;
+    }
+
+    /* graduate */
+    .container .graduate .title-graduate h2 {
+        margin-top: 5%;
+        font-size: 22px;
+    }
+    .container .graduate .item {
+        margin-bottom: 50px;
+    }
+    .container .graduate .item .title {
+        margin-bottom: 20px;
+    }
+    .container .graduate .item .title h2 {
+        font-size: 22px;
+    }
+    .container .graduate .item .title span {
+        font-size: 22px;
+    }
+
+    /* skills */
+    .container .skills .title-skills h2 {
+        margin-top: 5%;
+        font-size: 22px;
+    }
+    .container .skills .item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* contact */
+    .container .contact .title-contact h2 {
+        margin-top: 5%;
+        font-size: 22px;
+    }
+}
+
+/* Mobile 375px */
+@media screen and (max-width: 375px) {
+    .container .name {
+        margin-top: 10%;
+        margin-bottom: 50px;
+    }
+    .container .name h1 {
+        font-size: 28px;
+    }
+    .container .name h2 {
+        font-size: 22px;
+    }
+
+    /* about */
+    .container .about {
+        width: 100%;
+        min-height: 100px;
+        margin-bottom: 50px;
+    }
+    .container .about .title-about h2 {
+        margin-top: 5%;
+        font-size: 22px;
+    }
+    .container .about .paragraf {
+        font-size: 18px;
+    }
+
+    /* experience */
+    .container .experience .title-experience h2 {
+        margin-top: 5%;
+        font-size: 22px;
+    }
+    .container .experience .items .item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 220px;
+        margin-bottom: 50px;
+    }
+    .container .experience .items .item .work {
+        min-width: 100%;
+        min-height: 80px;
+    }
+    .container .experience .items .item .work h2 {
+        text-align: center;
+    }
+    .container .experience .items .item .work p {
+        text-align: center;
+    }
+    .container .experience .items .item .description {
+        width: 100%;
+        min-height: 100px;
+    }
+    .container .experience .items .item .description h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* graduate */
+    .container .graduate .title-graduate h2 {
+        margin-top: 5%;
+        font-size: 22px;
+    }
+    .container .graduate .item {
+        margin-bottom: 50px;
+    }
+    .container .graduate .item .title {
+        margin-bottom: 20px;
+    }
+    .container .graduate .item .title h2 {
+        font-size: 22px;
+    }
+    .container .graduate .item .title span {
+        font-size: 22px;
+    }
+
+    /* skills */
+    .container .skills .title-skills h2 {
+        margin-top: 5%;
+        font-size: 22px;
+    }
+    .container .skills .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .container .skills .item .title {
+        min-width: 100%;
+        margin-bottom: 10px;
+    }
+    .container .skills .item .icon {
+        width: 100%;
+    }
+
+    /* Contato */
+    .container .contact .title-contact h2 {
+        margin-top: 5%;
+        font-size: 22px;
+    }
+}
