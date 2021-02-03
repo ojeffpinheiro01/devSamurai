@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container pt-1 pb-1">
             <a class="navbar-brand fw-bold" href="#">airJeff</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -52,20 +53,18 @@
                         <div class="row">
                             <div class="col-12 col-md-12 col-lg-3 mb-3">
                                 <label for="location" class="form-label fw-bold">Localização</label>
-                                <input type="text" class="form-control rounded-0" 
-                                    name="location" id="location"
-                                    placeholder="Digite a localização"
-                                    value="Rio de Janeiro">
+                                <input type="text" class="form-control rounded-0" name="location" id="location"
+                                    placeholder="Digite a localização" value="Rio de Janeiro">
                             </div>
                             <div class="col-12 col-md-12 col-lg-2 mb-3">
                                 <label for="input" class="form-label fw-bold">Entrada</label>
-                                <input type="date" class="form-control rounded-0" 
-                                name="input" id="input" value="2021-02-01">
+                                <input type="date" class="form-control rounded-0" name="input" id="input"
+                                    value="2021-02-01">
                             </div>
                             <div class="col-12 col-md-12 col-lg-2 mb-3">
                                 <label for="output" class="form-label fw-bold">Saída</label>
-                                <input type="date" class="form-control rounded-0" 
-                                name="output" id="output" value="2021-02-09">
+                                <input type="date" class="form-control rounded-0" name="output" id="output"
+                                    value="2021-02-09">
                             </div>
                             <div class="col-12 col-md-12 col-lg-3 mb-3">
                                 <label for="shift" class="form-label fw-bold">Período</label>
@@ -93,17 +92,15 @@
     <main class="w-100 min-vh-100">
         <div class="container pt-4 pt-lg-5 pb-lg-5">
             <div class="row">
-                <div class="d-lg-block col-lg-3">
+                <div class="d-none d-md-none d-lg-block col-lg-3">
                     <div class="card h-100 rounded-0">
                         <div class="card-body">
                             <!-- alert covid -->
                             <div class="w-100 pb-4 border-bottom">
                                 <div class="card-title d-flex align-items-baseline">
                                     <h4 class="fs-5 fw-bold me-2">Covid</h4>
-                                    <button type="button" class="btn btn-tooltip-default"
-                                    data-bs-toggle="tooltip" 
-                                    data-bs-placement="right" 
-                                    title="Informação">
+                                    <button type="button" class="btn btn-tooltip-default" data-bs-toggle="tooltip"
+                                        data-bs-placement="right" title="Informação">
                                         <i class="fa fa-info-circle" aria-hidden="true"></i>
                                     </button>
                                 </div>
@@ -120,23 +117,82 @@
                                     <h4>Promoções</h4>
                                 </div>
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" value="cancelamento" id="cancelamento">
-                                    <label for="cancelamento" class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="cancellation"
+                                        id="cancellation">
+                                    <label for="cancellation" class="form-check-label">
                                         Cancelamento grátis
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" value="reserva-imediato" id="reserva-imediato">
-                                    <label for="reserva-imediato" class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="immediate-booking"
+                                        id="immediate-booking">
+                                    <label for="immediate-booking" class="form-check-label">
                                         Reserva de imediato
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" value="ofertas-especiais" id="ofertas-especiais">
-                                    <label for="ofertas-especiais" class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="special-offers"
+                                        id="special-offers">
+                                    <label for="special-offers" class="form-check-label">
                                         Ofertas especiais
                                     </label>
                                 </div>
+                            </div>
+                            <!-- preço -->
+                            <div class="w-100 pt-4 pb-4 border-bottom">
+                                <div class="card-title d-flex align-items-baseline">
+                                    <h4 class="fs-5 fw-bold me-2">Preço</h4>
+                                </div>
+                                <label for="range" class="form-label">R$: 100,00 à R$: 100.000,00</label>
+                                <input type="range" class="form-range" min="0" max="5" step="0.5" id="range">
+                            </div>
+                            <!-- acomodações -->
+                            <div class="w-100 pt-4 pb-4 border-bottom">
+                                <div class="card-title d-flex align-items-baseline">
+                                    <h4 class="fs-5 fw-bold me-2">Tipos de acomodações</h4>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="hotels" id="hotels">
+                                    <label for="hotels" class="form-check-label">Hotéis</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="inns" id="inns">
+                                    <label for="inns" class="form-check-label">Pousadas</label>
+                                </div>
+                            </div>
+                            <!-- serviços -->
+                            <div class="w-100 pt-4 pb-4 border-bottom">
+                                <div class="card-title d-flex align-items-baseline">
+                                    <h4 class="fs-5 fw-bold me-2">Serviços</h4>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="internet" id="internet">
+                                    <label for="internet" class="form-check-label">Internet</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="breakfast" id="breakfast">
+                                    <label for="breakfast" class="form-check-label">Café da manhã</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="pool" id="pool">
+                                    <label for="pool" class="form-check-label">Piscina</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="soccer-field" id="soccer-field">
+                                    <label for="soccer-field" class="form-check-label">Campo de futebol</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="parking" id="parking">
+                                    <label for="parking" class="form-check-label">Estacionamento</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="beachs" id="beachs">
+                                    <label for="beachs" class="form-check-label">Praias</label>
+                                </div>
+                            </div>
+                            <!-- botão -->
+                            <div class="w-100 pt-4 pb-4 d-flex justify-content-end">
+                                <button type="button" class="btn btn-orange pe-4 ps-4 rounded-0 w-100" disabled>Aplicar</button>
                             </div>
                         </div>
                     </div>
@@ -144,7 +200,6 @@
             </div>
         </div>
     </main>
-
     <!-- Footer -->
     <footer class="w-100 bg-light">
         <div class="container pt-5 pt-lg-5 pb-lg-3">
@@ -212,4 +267,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
     integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
     crossorigin="anonymous"></script>
+
 </html>
