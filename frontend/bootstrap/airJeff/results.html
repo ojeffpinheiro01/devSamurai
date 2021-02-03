@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pré-reserva | airJeff</title>
+    <title>airJeff</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
@@ -17,7 +16,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container pt-1 pb-1">
-            <a class="navbar-brand fw-bold" href="./index.html">airJeff</a>
+            <a class="navbar-brand fw-bold" href="#">airJeff</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor"
@@ -35,6 +34,7 @@
                     <li class="nav-item d-block d-md-none d-lg-none pt-2 pb-2">
                         <a href="#" type="button" class="btn btn-orange w-100 rounded-0">Login</a>
                     </li>
+                    <!-- End Botão tela menor -->
                     <li class="nav-item d-none d-md-block d-lg-block">
                         <a href="#" type="button" class="btn btn-orange rounded-0 ps-lg-5 pe-lg-5">Login</a>
                     </li>
@@ -43,85 +43,101 @@
         </div>
     </nav>
 
-    <!--  -->
-    <main class="w-100 pb-5 pt-lg-2 pb-lg-5 min-vh-100" >
-        <div class="container pt-5 pb-2 pt-lg-5 pb-lg-0">
-            <div class="w-100 title mb-5 mb-md-5 mb-lg-5 pt-lg-4">
-                <h1 class="fs-4 text-center text-lg-center mb-2 fw-bold">Pré-reserva</h1>
-                <div class="line-orange m-auto"></div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md col-lg-3 mb-3">
-                    <div class="card border-0 pt-lg-4 card-transparent">
-                        <img src="./assets/img/hoteis/hotel-1.jpeg" class="card-img-top rounded-0" alt="Hotel Paris Germany">
-                        <div class="card-body pe-0 ps-0  ">
-                            <h5 class="card-title mb-1">Hotel Califórnia</h5>
-                            <p class="card-text text-muted mb-1">Porto Seguro/BA</p>
-                            <div class="stars mb-3">
-                                <span class="star"><i class="fa fa-star" aria-hidden="true"></i></span>
-                                <span class="star"><i class="fa fa-star" aria-hidden="true"></i></span>
-                                <span class="star"><i class="fa fa-star" aria-hidden="true"></i></span>
-                                <span class="star"><i class="fa fa-star" aria-hidden="true"></i></span>
-                                <span class="star"><i class="fa fa-star" aria-hidden="true"></i></span>
+    <!-- Banner -->
+    <main class="w-100 background-banner-search d-flex align-items-center">
+        <div class="container">
+            <div class="card rounded-1 border-0 p-1 pt-4 pb-4 p-lg-4 pb-md-0 pb-lg-0 shadow">
+                <div class="card-body">
+                    <form class="pb-lg-2" onsubmit="return false;">
+                        <div class="row">
+                            <div class="col-12 col-md-12 col-lg-3 mb-3">
+                                <label for="location" class="form-label fw-bold">Localização</label>
+                                <input type="text" class="form-control rounded-0" 
+                                    name="location" id="location"
+                                    placeholder="Digite a localização"
+                                    value="Rio de Janeiro">
                             </div>
-                            <div class="alert alert-danger rounded-0 text-center" role="alert">
-                                Indisponível!
+                            <div class="col-12 col-md-12 col-lg-2 mb-3">
+                                <label for="input" class="form-label fw-bold">Entrada</label>
+                                <input type="date" class="form-control rounded-0" 
+                                name="input" id="input" value="2021-02-01">
+                            </div>
+                            <div class="col-12 col-md-12 col-lg-2 mb-3">
+                                <label for="output" class="form-label fw-bold">Saída</label>
+                                <input type="date" class="form-control rounded-0" 
+                                name="output" id="output" value="2021-02-09">
+                            </div>
+                            <div class="col-12 col-md-12 col-lg-3 mb-3">
+                                <label for="shift" class="form-label fw-bold">Período</label>
+                                <select class="form-select rounded-0" name="shift" id="shift"
+                                    aria-label="Selecione o período">
+                                    <option value="">Selecione o período</option>
+                                    <option value="dawn">Madrugada</option>
+                                    <option value="morning" selected>Manhã</option>
+                                    <option value="afternoon">Tarde</option>
+                                    <option value="night">Noite</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-12 col-lg-2 mb-3 pt-3 d-lg-flex align-items-end">
+                                <a href="#" class="btn btn-lg btn-orange w-100 rounded-0 border-0 p-lg-1">
+                                    Pesquisar
+                                </a>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
-                <div class="col-12 col-md col-lg-9">
-                    <div class="card border-0">
+            </div>
+        </div>
+    </main>
+
+    <main class="w-100 min-vh-100">
+        <div class="container pt-4 pt-lg-5 pb-lg-5">
+            <div class="row">
+                <div class="d-lg-block col-lg-3">
+                    <div class="card h-100 rounded-0">
                         <div class="card-body">
-                            <form class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="name" class="form-label">Nome completo</label>
-                                    <input type="text" class="form-control rounded-0" id="name" disabled>
+                            <!-- alert covid -->
+                            <div class="w-100 pb-4 border-bottom">
+                                <div class="card-title d-flex align-items-baseline">
+                                    <h4 class="fs-5 fw-bold me-2">Covid</h4>
+                                    <button type="button" class="btn btn-tooltip-default"
+                                    data-bs-toggle="tooltip" 
+                                    data-bs-placement="right" 
+                                    title="Informação">
+                                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                    </button>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="email" class="form-label">E-mail</label>
-                                    <input type="email" class="form-control rounded-0" id="email" disabled>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="covid" id="covid">
+                                    <label for="covid" class="form-check-label">
+                                        Estabelecimentos com medidas de segurança em vigor
+                                    </label>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="doc" class="form-label">CPF/Passaport</label>
-                                    <input type="text" class="form-control rounded-0" id="doc" disabled>
+                            </div>
+                            <!-- promo -->
+                            <div class="w-100 pt-4 pb-4 border-bottom">
+                                <div class="card-title d-flex align-items-baseline">
+                                    <h4>Promoções</h4>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="b-day" class="form-label">Data de nascimento</label>
-                                    <input type="date" class="form-control rounded-0" id="b-day" disabled>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="cancelamento" id="cancelamento">
+                                    <label for="cancelamento" class="form-check-label">
+                                        Cancelamento grátis
+                                    </label>
                                 </div>
-                                <div class="col-md-12">
-                                    <label for="celfone" class="form-label">Telefone</label>
-                                    <input type="tel" class="form-control rounded-0" id="celfone" disabled>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="reserva-imediato" id="reserva-imediato">
+                                    <label for="reserva-imediato" class="form-check-label">
+                                        Reserva de imediato
+                                    </label>
                                 </div>
-                                <div class="col-md-4">
-                                    <label for="country" class="form-label">País</label>
-                                    <input type="text" class="form-control rounded-0" id="country" disabled>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="ofertas-especiais" id="ofertas-especiais">
+                                    <label for="ofertas-especiais" class="form-check-label">
+                                        Ofertas especiais
+                                    </label>
                                 </div>
-                                <div class="col-md-4">
-                                    <label for="distrit" class="form-label">Estado</label>
-                                    <input type="text" class="form-control rounded-0" id="distrit" disabled>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="city" class="form-label">Cidade</label>
-                                    <input type="text" class="form-control rounded-0" id="city" disabled>
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="street" class="form-label">Rua</label>
-                                    <input type="text" class="form-control rounded-0" id="street" disabled>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="neighborhood" class="form-label">Bairro</label>
-                                    <input type="text" class="form-control rounded-0" id="neighborhood" disabled>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="cep" class="form-label">CEP</label>
-                                    <input type="text" class="form-control rounded-0" id="cep" disabled>
-                                </div>
-                                <div class="w-100 d-flex justify-content-end d-lg-flex justify-content-lg-end pt-3">
-                                    <button type="button" class="btn btn-orange pe-4 ps-4 rounded-0" disabled>Próximo</button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -188,6 +204,7 @@
             </p>
         </div>
     </footer>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
     integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
@@ -195,5 +212,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
     integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
     crossorigin="anonymous"></script>
-
 </html>
