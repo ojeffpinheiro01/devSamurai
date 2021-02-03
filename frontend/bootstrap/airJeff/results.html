@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>airJeff</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container pt-1 pb-1">
+            <a class="navbar-brand fw-bold" href="#">airJeff</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="navbar-item me-5">
+                        <a href="./index.html" class="nav-link">Home</a>
+                    </li>
+                    <!-- Botão aparece quando tela menor -->
+                    <li class="nav-item d-block d-md-none d-lg-none pt-2 pb-2">
+                        <a href="#" type="button" class="btn btn-orange w-100 rounded-0">Login</a>
+                    </li>
+                    <!-- End Botão tela menor -->
+                    <li class="nav-item d-none d-md-block d-lg-block">
+                        <a href="#" type="button" class="btn btn-orange rounded-0 ps-lg-5 pe-lg-5">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <main class="w-100 background-banner-search d-flex align-items-center">
+        <div class="container">
+            <div class="card rounded-1 border-0 p-1 pt-4 pb-4 p-lg-4 pb-md-0 pb-lg-0 shadow">
+                <div class="card-body">
+                    <form class="pb-lg-2" onsubmit="return false;">
+                        <div class="row">
+                            <div class="col-12 col-md-12 col-lg-3 mb-3">
+                                <label for="location" class="form-label fw-bold">Localização</label>
+                                <input type="text" class="form-control rounded-0" name="location" id="location"
+                                    placeholder="Digite a localização" value="Rio de Janeiro">
+                            </div>
+                            <div class="col-12 col-md-12 col-lg-2 mb-3">
+                                <label for="input" class="form-label fw-bold">Entrada</label>
+                                <input type="date" class="form-control rounded-0" name="input" id="input"
+                                    value="2021-02-01">
+                            </div>
+                            <div class="col-12 col-md-12 col-lg-2 mb-3">
+                                <label for="output" class="form-label fw-bold">Saída</label>
+                                <input type="date" class="form-control rounded-0" name="output" id="output"
+                                    value="2021-02-09">
+                            </div>
+                            <div class="col-12 col-md-12 col-lg-3 mb-3">
+                                <label for="shift" class="form-label fw-bold">Período</label>
+                                <select class="form-select rounded-0" name="shift" id="shift"
+                                    aria-label="Selecione o período">
+                                    <option value="">Selecione o período</option>
+                                    <option value="dawn">Madrugada</option>
+                                    <option value="morning" selected>Manhã</option>
+                                    <option value="afternoon">Tarde</option>
+                                    <option value="night">Noite</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-12 col-lg-2 mb-3 pt-3 d-lg-flex align-items-end">
+                                <a href="#" class="btn btn-lg btn-orange w-100 rounded-0 border-0 p-lg-1">
+                                    Pesquisar
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <main class="w-100 min-vh-100">
+        <div class="container pt-4 pt-lg-5 pb-lg-5">
+            <div class="row">
+                <div class="d-none d-md-none d-lg-block col-lg-3">
+                    <div class="card h-100 rounded-0">
+                        <div class="card-body">
+                            <!-- alert covid -->
+                            <div class="w-100 pb-4 border-bottom">
+                                <div class="card-title d-flex align-items-baseline">
+                                    <h4 class="fs-5 fw-bold me-2">Covid</h4>
+                                    <button type="button" class="btn btn-tooltip-default" data-bs-toggle="tooltip"
+                                        data-bs-placement="right" title="Informação">
+                                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="covid" id="covid">
+                                    <label for="covid" class="form-check-label">
+                                        Estabelecimentos com medidas de segurança em vigor
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- promo -->
+                            <div class="w-100 pt-4 pb-4 border-bottom">
+                                <div class="card-title d-flex align-items-baseline">
+                                    <h4>Promoções</h4>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="cancellation"
+                                        id="cancellation">
+                                    <label for="cancellation" class="form-check-label">
+                                        Cancelamento grátis
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="immediate-booking"
+                                        id="immediate-booking">
+                                    <label for="immediate-booking" class="form-check-label">
+                                        Reserva de imediato
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="special-offers"
+                                        id="special-offers">
+                                    <label for="special-offers" class="form-check-label">
+                                        Ofertas especiais
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- preço -->
+                            <div class="w-100 pt-4 pb-4 border-bottom">
+                                <div class="card-title d-flex align-items-baseline">
+                                    <h4 class="fs-5 fw-bold me-2">Preço</h4>
+                                </div>
+                                <label for="range" class="form-label">R$: 100,00 à R$: 100.000,00</label>
+                                <input type="range" class="form-range" min="0" max="5" step="0.5" id="range">
+                            </div>
+                            <!-- acomodações -->
+                            <div class="w-100 pt-4 pb-4 border-bottom">
+                                <div class="card-title d-flex align-items-baseline">
+                                    <h4 class="fs-5 fw-bold me-2">Tipos de acomodações</h4>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="hotels" id="hotels">
+                                    <label for="hotels" class="form-check-label">Hotéis</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="inns" id="inns">
+                                    <label for="inns" class="form-check-label">Pousadas</label>
+                                </div>
+                            </div>
+                            <!-- serviços -->
+                            <div class="w-100 pt-4 pb-4 border-bottom">
+                                <div class="card-title d-flex align-items-baseline">
+                                    <h4 class="fs-5 fw-bold me-2">Serviços</h4>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="internet" id="internet">
+                                    <label for="internet" class="form-check-label">Internet</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="breakfast" id="breakfast">
+                                    <label for="breakfast" class="form-check-label">Café da manhã</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="pool" id="pool">
+                                    <label for="pool" class="form-check-label">Piscina</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="soccer-field" id="soccer-field">
+                                    <label for="soccer-field" class="form-check-label">Campo de futebol</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="parking" id="parking">
+                                    <label for="parking" class="form-check-label">Estacionamento</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" value="beachs" id="beachs">
+                                    <label for="beachs" class="form-check-label">Praias</label>
+                                </div>
+                            </div>
+                            <!-- botão -->
+                            <div class="w-100 pt-4 pb-4 d-flex justify-content-end">
+                                <button type="button" class="btn btn-orange pe-4 ps-4 rounded-0 w-100" disabled>Aplicar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="w-100 bg-light">
+        <div class="container pt-5 pt-lg-5 pb-lg-3">
+            <div class="row">
+                <div class="col-12 col-md-3 col-lg-4 mb-3 mb-md-0 mb-lg-0">
+                    <h4 class="fs-4 fw-bold text-uppercase mb-2 mb-md-4 mb-lg-4">airJeff</h4>
+                    <p class="text-muted">
+                        Somos uma empresa que nasceu no ano de 1998, cuja missão
+                        é entregar aos nossos clientes e parceiros
+                        os melhores lugares para ter um lazer e um descanso excelente
+                        e merecido.
+                    </p>
+                    <p>
+                        <a href="#" title="Facebook" class="text-decoration-none text-muted me-1 me-md-1 me-lg-2">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="Twitter" class="text-decoration-none text-muted me-1 me-md-1 me-lg-2">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="Instagram" class="text-decoration-none text-muted me-1 me-md-1 me-lg-2">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="YouTube" class="text-decoration-none text-muted me-1 me-md-1 me-lg-2">
+                            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                        </a>
+                    </p>
+                </div>
+                <div class="col-12 col-md-3 col-lg-4 pe-lg-0 ps-lg-5 mb-3 mb-md-0 mb-lg-0">
+                    <h4 class="fs-4 fw-bold mb-2 mb-md-4 mb-lg-4">Minha conta</h4>
+                    <p class="mb-0">
+                        <a href="#" class="text-decoration-none text-muted">Minhas viagens</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="#" class="text-decoration-none text-muted">Meu perfil</a>
+                    </p>
+                </div>
+                <div class="col-12 col-md-3 col-lg-4 mb-3 mb-md-0 mb-lg-0">
+                    <h4 class="fs-4 fw-bold mb-2 mb-md-4 mb-lg-4">Informações adicionais</h4>
+                    <p class="mb-0">
+                        <a href="#" class="text-decoration-none text-muted">Termos e condições</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="#" class="text-decoration-none text-muted">Política de privacidade</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="#" class="text-decoration-none text-muted">Central de ajuda</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="#" class="text-decoration-none text-muted">Condições de uso</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="w-100 bg-color-orange d-flex justify-content-center align-items-center">
+            <p class="mb-0 pt-1 pb-1">
+                &copy; Todos os direitos reservados
+            </p>
+        </div>
+    </footer>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+    crossorigin="anonymous"></script>
+
+</html>
