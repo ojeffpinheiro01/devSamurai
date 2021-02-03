@@ -44,3 +44,17 @@
     padding: 0px;
     outline: none;
 }
+
+.btn-login {
+    color: var(--bg-white);
+    background-color: var(--bg-orange);
+    outline: none;
+    box-shadow: none;
+    font-size: 1rem;
+    font-family: 'Ruda', sans-serif;
+    font-weight: 400;
+}
+.btn-login:hover {
+    color: var(--bg-white);
+    background-color: var(--bg-orange-hover);
+}

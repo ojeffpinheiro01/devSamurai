@@ -2,6 +2,7 @@
     width: 100%;
     height: 100%;
     background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+}
+.card-login-container {
+    width: 550px;
 }
