@@ -16,7 +16,6 @@ Projeto de um website para controle de convidados de uma festa, onde o usuário 
 # :computer: Tecnologias 
 Este projeto foi desenvolvido com as seguintes tecnologias:
 - HTML;
-- CSS;
 - Javascript;
 ---
 
