@@ -2,7 +2,7 @@
   
 <p align="center">
   <a href="#book-sobre-o-projeto">Sobre o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  
-  <a href="#eye-preview">Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  
+  <a href="#earth-americas-deploy">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  
   <a href="#computer-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  
   <a href="#gear-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  
   <a href="#mailbox-contato">Contato</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -12,22 +12,9 @@
 # :book: Sobre o projeto 
 Projeto de um website para uma agência de turismo com objetivo de mostrar os hotéis disponíveis, preços e promoções e possíbilitar o usuário a pré-reservar um quarto
 
-# :eye: Preview
-## :desktop_computer: Web
-<p align="center" >
-  <img src="https://user-images.githubusercontent.com/60162736/106643761-f2d54780-6568-11eb-9525-f969740c2652.png" alt="home" width="750px"><br />
-  Banner<br />
-  <img src="https://user-images.githubusercontent.com/60162736/106643419-78a4c300-6568-11eb-9780-0d55e7755a3e.png" alt="banner" width="750px"><br />
-    Destaques<br />
-    <img src="https://user-images.githubusercontent.com/60162736/106664405-c975e500-6583-11eb-96f7-595bc4aa3334.png" alt="banner" width="750px"><br />
-    Promoções<br />
-  <img src="https://user-images.githubusercontent.com/60162736/106664411-cb3fa880-6583-11eb-9d25-a1e17c953a78.png" alt="banner" width="750px"><br />
-    Diferenciais<br />
-  <img src="https://user-images.githubusercontent.com/60162736/106664412-cbd83f00-6583-11eb-8ae9-a42347742418.png" alt="banner" width="750px"><br />
-    Carrocel de fotos dos quartos e avaliações de clientes<br />
-    <img src="https://user-images.githubusercontent.com/60162736/106664413-cbd83f00-6583-11eb-95b6-0eddab6b9b1c.png" alt="banner" width="750px"><br />
-    Rodapé<br />
-</p>
+
+# :earth_americas: Deploy
+### Front-end WEB: [Netlify](https://air-jeff.netlify.appp)<br />
 
 
 # :computer: Tecnologias 
