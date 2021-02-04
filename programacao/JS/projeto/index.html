@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de convidados</title>
 </head>
+
 <body>
     <div id="app">
         <h1>Lista de convidados</h1>
         <ul id="list"></ul>
 
         <input id="field" type="text" placeholder="Digite o nome do convidado">
-        <button id="btn" >Cadastrar</button>
+        <button id="btn">Cadastrar</button>
     </div>
-    <script type="text/javascript" >
+    <script type="text/javascript">
         var elList = document.getElementById("list");
         var elField = document.getElementById("field");
         var elBtn = document.getElementById("btn");
 
         var guests = [
-            { id: 1, name: "Luan", age: 20},
-            { id: 1, name: "Leo", age: 30},
-            { id: 1, name: "Luis", age: 20},
-            { id: 1, name: "Moacir", age: 30},
-            { id: 1, name: "Rafa", age: 20},
+            { name: "Luan" },
+            { name: "Leo" },
+            { name: "Luis" },
+            { name: "Moacir" },
+            { name: "Rafa" },
         ];
-        for(guest of guests){
-            var elGuest = document.createElement("li");
-            var elName = document.createTextNode(guest.name);
 
-            elGuest.appendChild(elName);
-            elList.appendChild(elGuest)
+        function listGuests() {
+            elList.innerHTML = "";
+
+            for (guest of guests) {
+                var elGuest = document.createElement("li");
+                var elName = document.createTextNode(guest.name);
+
+                elGuest.appendChild(elName);
+                elList.appendChild(elGuest)
+            }
         }
+
+        listGuests();
+
+        var addGuest = function () {
+            var name = elField.value;
+            guests.push({ name: name });
+            elField.value = "";
+
+            listGuests();
+        }
+
+        elBtn.onclick = addGuest;
+
     </script>
 </body>
+
 </html>
