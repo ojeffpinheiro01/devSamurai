@@ -15,7 +15,7 @@ O curso segue as seguintes trilhas:
   - [ ] Dominando Postgres
 - [ ] Frontend
   - [x] Frontend Master
-  - [ ] Dominando React
+  - [x] Dominando React
   - [x] Sites com Bootstrap
 - [ ] Backend
   - [ ] API Supreme Mastery
