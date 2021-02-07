@@ -26,6 +26,11 @@ O curso segue as seguintes trilhas:
   - [ ] Dominando o Flutter
   - [ ] Publicando seu Aplicativo
 
+## Projetos
+Projetos desenvolvidos: <br />
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ojeffpinheiro01&repo=devSamurai&theme=react&show_icons=true)](https://github.com/ojeffpinheiro01/devSamurai/tree/main/programacao/JS/projeto)
+
+
 ### :mailbox: Reach me	
 [![Linkedin Badge](https://img.shields.io/badge/-JefersonPinheiro-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://https://www.linkedin.com/in/jeferson-pinheiro/)](https://www.linkedin.com/in/jeferson-pinheiro/)
 [![Gmail Badge](https://img.shields.io/badge/-jefersonpinheirodesouza@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:jefersonpinheirodesouza@gmail.com)](mailto:jefersonpinheirodesouza@gmail.com)
