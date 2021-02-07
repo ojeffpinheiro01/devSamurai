@@ -34,6 +34,13 @@ const App = () => {
     }
   };
 
+  const onToggle = (task) => {
+    setTasks(
+      tasks.map((obj) => 
+      obj.id === task.id ? {...obj, checked: !task.checked} : obj)
+    )
+  }
+
   return (
     <section id="app" className="container">
       <header>
@@ -41,7 +48,7 @@ const App = () => {
       </header>
       <section className="main">
         <input
-          className="new-todo"
+          className="new-task"
           placeholder="o que precisa ser feito?"
           value={value}
           onChange={onChange}
@@ -50,7 +57,15 @@ const App = () => {
         <ul className="tasks-list">
           {tasks.map((task) => (
             <li key={task.id.toString()}>
-              <span className="todo">{task.title}</span>
+              <span
+              className={['task', task.checked ? 'checked' : ''].join(" ")}
+              onClick={() => onToggle(task) }
+              onKeyPress={() => onToggle(task) }
+              role="button"
+              tabIndex={0}
+              >
+                {task.title}
+              </span>
               <button className="remove" type="button">
                 <MdDelete size={28} />
               </button>

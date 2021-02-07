@@ -1,4 +1,4 @@
-.new-todo {
+.new-task {
   background-color: rgba(0, 0, 0, 0.03);
   box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
   font-size: 1.5rem;
@@ -12,7 +12,7 @@ ul.tasks-list li {
   border-bottom: 1px solid #dfe6e9;
 }
 
-.todo {
+.task {
   flex: 1;
   outline: none;
   cursor: pointer;
@@ -21,6 +21,10 @@ ul.tasks-list li {
   line-height: 1.2;
   transition: color 0.3s;
   padding: 15px 15px 17px 15px;
+}
+.task.checked {
+  color: #b2bec3;
+  text-decoration: line-through;
 }
 
 .remove {
