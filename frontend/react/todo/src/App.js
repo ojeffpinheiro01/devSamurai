@@ -41,6 +41,10 @@ const App = () => {
     )
   }
 
+  const onDelete = (task) => {
+    setTasks(tasks.filter((obj) => obj.id !== task.id))
+  }
+
   return (
     <section id="app" className="container">
       <header>
@@ -66,7 +70,8 @@ const App = () => {
               >
                 {task.title}
               </span>
-              <button className="remove" type="button">
+              <button className="remove" type="button"
+                onClick={() => onDelete(task) }>
                 <MdDelete size={28} />
               </button>
             </li>
