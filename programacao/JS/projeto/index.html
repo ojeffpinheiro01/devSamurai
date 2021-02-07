@@ -17,13 +17,7 @@
         <ul id="list"></ul>
     </div>
     <script type="text/javascript">
-        var guests = [
-            { name: "Luan" },
-            { name: "Leo" },
-            { name: "Luis" },
-            { name: "Moacir" },
-            { name: "Rafa" },
-        ];
+        var guests = JSON.parse(localStorage.getItem("guests")) || [];
         
         var elList = document.getElementById("list");
         var elField = document.getElementById("field");
@@ -34,10 +28,15 @@
             guests.push({ name: name });
             elField.value = "";
 
+            saveGuests();
             listGuests();
         }
 
         elBtn.onclick = addGuest;
+
+        function saveGuests(){
+            localStorage.setItem("guests", JSON.stringify(guests));
+        }
 
         function listGuests() {
             elList.innerHTML = "";
@@ -52,6 +51,7 @@
                     guests = guests.filter(function(item){
                         return item.name !== guest.name;
                     });
+                    saveGuests();
                     listGuests();
                 }
 
