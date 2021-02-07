@@ -28,7 +28,7 @@ O curso segue as seguintes trilhas:
 
 ## Projetos
 Projetos desenvolvidos: <br />
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ojeffpinheiro01&repo=devSamurai&theme=react&show_icons=true)](https://github.com/ojeffpinheiro01/devSamurai/tree/main/programacao/JS/projeto)
+<a href="https://github.com/ojeffpinheiro01/devSamurai/tree/main/programacao/JS/projeto" target="blank"><img align="center" src="https://www.svgrepo.com/show/106073/verified-commercial-list.svg" alt="ojeffoinheiro" height="30" width="40" /></a>
 
 
 ### :mailbox: Reach me	
