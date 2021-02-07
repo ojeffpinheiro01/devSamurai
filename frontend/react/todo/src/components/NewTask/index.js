@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import './style.css'
+
 const NewTask = ({ onNewTask }) => {
   const ESCAPE_KEY = 27;
   const ENTER_KEY = 13;

@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import NewTodo from './components/NewTask';
 import TaskList from './components/TaskList';
 
-import './App.css';
-
 const App = () => {
   const [tasks, setTasks] = useState([]);
 

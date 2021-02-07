@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MdDelete } from 'react-icons/md';
 
+import './style.css'
+
 const TaskList = ({ tasks, onToggle, onDelete }) => (
   <ul className="tasks-list">
     {tasks.map((task) => (
