@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { MdDelete } from 'react-icons/md';
 
-import NewTodo from './components/NewTask'
+import NewTodo from './components/NewTask';
+import TaskList from './components/TaskList';
 
 import './App.css';
 
 const App = () => {
-
   const [tasks, setTasks] = useState([]);
 
   const onNewTask = (value) => {
@@ -18,17 +17,18 @@ const App = () => {
         checked: false,
       },
     ]);
-  }
+  };
 
   const onToggle = (task) => {
     setTasks(
-      tasks.map((obj) => 
-      obj.id === task.id ? {...obj, checked: !task.checked} : obj)
-    )
-  }
+      tasks.map((obj) =>
+        obj.id === task.id ? { ...obj, checked: !task.checked } : obj
+      )
+    );
+  };
 
   const onDelete = (task) => {
-    setTasks(tasks.filter((obj) => obj.id !== task.id))
+    setTasks(tasks.filter((obj) => obj.id !== task.id));
   };
 
   return (
@@ -38,25 +38,7 @@ const App = () => {
       </header>
       <section className="main">
         <NewTodo onNewTask={onNewTask} />
-        <ul className="tasks-list">
-          {tasks.map((task) => (
-            <li key={task.id.toString()}>
-              <span
-              className={['task', task.checked ? 'checked' : ''].join(" ")}
-              onClick={() => onToggle(task) }
-              onKeyPress={() => onToggle(task) }
-              role="button"
-              tabIndex={0}
-              >
-                {task.title}
-              </span>
-              <button className="remove" type="button"
-                onClick={() => onDelete(task) }>
-                <MdDelete size={28} />
-              </button>
-            </li>
-          ))}
-        </ul>
+        <TaskList tasks={tasks} onToggle={onToggle} onDelete={onDelete} />
       </section>
     </section>
   );

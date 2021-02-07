@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const NewTask = ({ onNewTask }) => {
   const ESCAPE_KEY = 27;
@@ -42,7 +42,7 @@ const NewTask = ({ onNewTask }) => {
 };
 
 NewTask.propTypes = {
-  onNewTask: PropTypes.func.isRequired
-}
+  onNewTask: PropTypes.func.isRequired,
+};
 
 export default NewTask;
