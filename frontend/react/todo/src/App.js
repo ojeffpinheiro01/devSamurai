@@ -1,29 +1,26 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { MdDelete } from 'react-icons/md';
 
-import "./App.css";
+import './App.css';
 
 const App = () => {
   const ESCAPE_KEY = 27;
   const ENTER_KEY = 13;
 
-  const inicialTasks = [
-    { id: 1, title: 'Estudar' , checked: false },
-    { id: 2, title: 'Lista' , checked: false },
-    { id: 2, title: 'Readme' , checked: false }
-  ]
-
   const [value, setValue] = useState('');
-  const [tasks, ] = useState(inicialTasks);
+  const [tasks, setTasks] = useState([]);
 
   const erase = () => {
     setValue('');
   };
 
   const submit = () => {
-    console.log('submit', value);
+    setTasks([
+      ...tasks,
+      { id: new Date().getTime(), title: value, checked: false },
+    ]);
     erase();
-  }
+  };
 
   const onChange = (event) => {
     setValue(event.target.value);
