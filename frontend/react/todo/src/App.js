@@ -1,21 +1,26 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { MdDelete } from 'react-icons/md';
 
-import "./App.css";
+import './App.css';
 
 const App = () => {
   const ESCAPE_KEY = 27;
   const ENTER_KEY = 13;
 
   const [value, setValue] = useState('');
+  const [tasks, setTasks] = useState([]);
 
   const erase = () => {
     setValue('');
   };
 
   const submit = () => {
-    console.log('submit', value);
+    setTasks([
+      ...tasks,
+      { id: new Date().getTime(), title: value, checked: false },
+    ]);
     erase();
-  }
+  };
 
   const onChange = (event) => {
     setValue(event.target.value);
@@ -29,6 +34,17 @@ const App = () => {
     }
   };
 
+  const onToggle = (task) => {
+    setTasks(
+      tasks.map((obj) => 
+      obj.id === task.id ? {...obj, checked: !task.checked} : obj)
+    )
+  }
+
+  const onDelete = (task) => {
+    setTasks(tasks.filter((obj) => obj.id !== task.id))
+  }
+
   return (
     <section id="app" className="container">
       <header>
@@ -36,12 +52,31 @@ const App = () => {
       </header>
       <section className="main">
         <input
-          className="new-todo"
+          className="new-task"
           placeholder="o que precisa ser feito?"
           value={value}
           onChange={onChange}
           onKeyDown={onKeyDown}
         />
+        <ul className="tasks-list">
+          {tasks.map((task) => (
+            <li key={task.id.toString()}>
+              <span
+              className={['task', task.checked ? 'checked' : ''].join(" ")}
+              onClick={() => onToggle(task) }
+              onKeyPress={() => onToggle(task) }
+              role="button"
+              tabIndex={0}
+              >
+                {task.title}
+              </span>
+              <button className="remove" type="button"
+                onClick={() => onDelete(task) }>
+                <MdDelete size={28} />
+              </button>
+            </li>
+          ))}
+        </ul>
       </section>
     </section>
   );
