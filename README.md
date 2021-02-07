@@ -7,7 +7,7 @@ O curso relacionado ao material disponibilizado neste repositório está disponi
 ## Trilhas
 O curso segue as seguintes trilhas:
 - [ ] Programação
-  - [ ] JS Ninja
+  - [x] JS Ninja
   - [ ] Samurai Class
   - [ ] Dominando Postgres
 - [ ] Frontend
