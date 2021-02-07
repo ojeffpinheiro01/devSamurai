@@ -28,6 +28,8 @@ O curso segue as seguintes trilhas:
 
 ## Projetos
 Projetos desenvolvidos: <br />
+<a href="https://github.com/ojeffpinheiro01/devSamurai/tree/main/frontend/bootstrap/airJeff" target="blank"><img align="center" src="https://www.iconpacks.net/icons/2/free-hotel-icon-1880-thumb.png" alt="airJeff" height="60" width="60" />airJeff</a>
+
 <a href="https://github.com/ojeffpinheiro01/devSamurai/tree/main/programacao/JS/projeto" target="blank"><img align="center" src="https://images.vexels.com/media/users/3/151869/isolated/preview/767ca771755f4675d4063c03e17c8595-medical-checklist-icon-by-vexels.png" alt="Lista de Convidados" height="60" width="60" />Lista de Convidados</a>
 
 
