@@ -14,8 +14,8 @@ O curso segue as seguintes trilhas:
   - [ ] Samurai Class
   - [ ] Dominando Postgres
 - [ ] Frontend
-  - [ ] Frontend Master
-  - [ ] Dominando React
+  - [x] Frontend Master
+  - [x] Dominando React
   - [ ] Sites com Bootstrap
 - [ ] Backend
   - [ ] API Supreme Mastery
