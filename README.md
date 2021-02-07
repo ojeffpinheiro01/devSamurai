@@ -6,22 +6,22 @@ O curso relacionado ao material disponibilizado neste repositório está disponi
 
 ## Trilhas
 O curso segue as seguintes trilhas:
-- Programação
-  - JS Ninja
-  - Samurai Class
-  - Dominando Postgres
-- Frontend
-  - Frontend Master
-  - Dominando React
-  - Sites com Bootstrap
-- Backend
-  - API Supreme Mastery
-  - Dominando Node.js
-- Mobile
-  - Dominando o Ionic
-  - Meu Primeiro Aplicativo
-  - Dominando o Flutter
-  - Publicando seu Aplicativo
+- [ ] Programação
+  - [ ] JS Ninja
+  - [ ] Samurai Class
+  - [ ] Dominando Postgres
+- [ ] Frontend
+  - [ ] Frontend Master
+  - [ ] Dominando React
+  - [ ] Sites com Bootstrap
+- [ ] Backend
+  - [ ] API Supreme Mastery
+  - [ ] Dominando Node.js
+- [ ] Mobile
+  - [ ] Dominando o Ionic
+  - [ ] Meu Primeiro Aplicativo
+  - [ ] Dominando o Flutter
+  - [ ] Publicando seu Aplicativo
 
 ### :mailbox: Reach me	
 [![Linkedin Badge](https://img.shields.io/badge/-JefersonPinheiro-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://https://www.linkedin.com/in/jeferson-pinheiro/)](https://www.linkedin.com/in/jeferson-pinheiro/)
