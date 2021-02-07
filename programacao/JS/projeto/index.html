@@ -10,16 +10,13 @@
 <body>
     <div id="app">
         <h1>Lista de convidados</h1>
-        <ul id="list"></ul>
-
+        
         <input id="field" type="text" placeholder="Digite o nome do convidado">
         <button id="btn">Cadastrar</button>
+
+        <ul id="list"></ul>
     </div>
     <script type="text/javascript">
-        var elList = document.getElementById("list");
-        var elField = document.getElementById("field");
-        var elBtn = document.getElementById("btn");
-
         var guests = [
             { name: "Luan" },
             { name: "Leo" },
@@ -27,20 +24,10 @@
             { name: "Moacir" },
             { name: "Rafa" },
         ];
-
-        function listGuests() {
-            elList.innerHTML = "";
-
-            for (guest of guests) {
-                var elGuest = document.createElement("li");
-                var elName = document.createTextNode(guest.name);
-
-                elGuest.appendChild(elName);
-                elList.appendChild(elGuest)
-            }
-        }
-
-        listGuests();
+        
+        var elList = document.getElementById("list");
+        var elField = document.getElementById("field");
+        var elBtn = document.getElementById("btn");
 
         var addGuest = function () {
             var name = elField.value;
@@ -52,6 +39,32 @@
 
         elBtn.onclick = addGuest;
 
+        function listGuests() {
+            elList.innerHTML = "";
+
+            for (const guest of guests) {
+                var elGuest = document.createElement("li");
+                var elName = document.createTextNode(guest.name);
+
+                var elDel = document.createElement("a");
+                elDel.setAttribute("href", "#");
+                elDel.onclick = function() {
+                    guests = guests.filter(function(item){
+                        return item.name !== guest.name;
+                    });
+                    listGuests();
+                }
+
+                var elDelText = document.createTextNode("Excluir");
+                elDel.appendChild(elDelText);
+
+                elGuest.appendChild(elName);
+                elGuest.appendChild(elDel);
+                elList.appendChild(elGuest)
+            }
+        }
+
+        listGuests();
     </script>
 </body>
 
