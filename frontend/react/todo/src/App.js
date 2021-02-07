@@ -1,38 +1,24 @@
 import React, { useState } from 'react';
 import { MdDelete } from 'react-icons/md';
 
+import NewTodo from './components/NewTask'
+
 import './App.css';
 
 const App = () => {
-  const ESCAPE_KEY = 27;
-  const ENTER_KEY = 13;
 
-  const [value, setValue] = useState('');
   const [tasks, setTasks] = useState([]);
 
-  const erase = () => {
-    setValue('');
-  };
-
-  const submit = () => {
+  const onNewTask = (value) => {
     setTasks([
       ...tasks,
-      { id: new Date().getTime(), title: value, checked: false },
+      {
+        id: new Date().getTime(),
+        title: value,
+        checked: false,
+      },
     ]);
-    erase();
-  };
-
-  const onChange = (event) => {
-    setValue(event.target.value);
-  };
-
-  const onKeyDown = (event) => {
-    if (event.which === ENTER_KEY) {
-      submit();
-    } else if (event.which === ESCAPE_KEY) {
-      erase();
-    }
-  };
+  }
 
   const onToggle = (task) => {
     setTasks(
@@ -43,7 +29,7 @@ const App = () => {
 
   const onDelete = (task) => {
     setTasks(tasks.filter((obj) => obj.id !== task.id))
-  }
+  };
 
   return (
     <section id="app" className="container">
@@ -51,13 +37,7 @@ const App = () => {
         <h1 className="title">todo</h1>
       </header>
       <section className="main">
-        <input
-          className="new-task"
-          placeholder="o que precisa ser feito?"
-          value={value}
-          onChange={onChange}
-          onKeyDown={onKeyDown}
-        />
+        <NewTodo onNewTask={onNewTask} />
         <ul className="tasks-list">
           {tasks.map((task) => (
             <li key={task.id.toString()}>
