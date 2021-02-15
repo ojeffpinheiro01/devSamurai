@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Jokenpo</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="title">Jokenpo</h1>
+
+        <div id="scoreboard">
+            <div id="player">
+                <h2 id="player-name">&nbsp;</h2>
+                <span id="player-points">0</span>
+                <ul id="player-choice">
+                    <li><a id="player-choice-1"><img src='./imgs/pedra.png'></a></li>
+                    <li><a id="player-choice-2"><img src='./imgs/papel.png'></a></li>
+                    <li><a id="player-choice-3"><img src='./imgs/tesoura.png'></a></li>
+                    <li><a id="player-choice-4"><img src='./imgs/lagarto.png'></a></li>
+                    <li><a id="player-choice-5"><img src='./imgs/spock.png'></a></li>
+                </ul>
+            </div>
+
+            <div id="versus">vs</div>
+
+            <div id="computer">
+                <h2 id="computer-name">Máquina</h2>
+                <span id="computer-points">0</span>
+
+                <ul id="computer-choice">
+                    <li><a id="computer-choice-1"><img src='./imgs/pedra.png'></a></li>
+                    <li><a id="computer-choice-2"><img src='./imgs/papel.png'></a></li>
+                    <li><a id="computer-choice-3"><img src='./imgs/tesoura.png'></a></li>
+                    <li><a id="computer-choice-4"><img src='./imgs/lagarto.png'></a></li>
+                    <li><a id="computer-choice-5"><img src='./imgs/spock.png'></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="message">Mensagens</div>
+    </div>
+
+    <script>
+        var playerName;
+        var playerPoints = 0;
+        var playerChoice = 0;
+
+        var computerChoice = 0;
+        var computerPoints = 0;
+
+        // Gera números randomicos.
+        // 1 - Pedra
+        // 2 - Papel
+        // 3 - Tesoura
+        // 4 - lagarto
+        // 5 - spock
+        function draw(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function parce(num) {
+            if(num == 1) {
+                return 'Pedra';
+            }
+            else if(num == 2) {
+                return 'Papel';
+            }
+            else if(num == 3) {
+                return 'Tesoura';
+            }
+            else if(num == 4) {
+                return 'Lagarto';
+            }
+            else if(num == 5) {
+                return 'Spock';
+            }
+        }
+
+        // Adiciona a classe selecionado.
+        function select(type, choice) {
+            document.getElementById(type + '-choice-' + choice).classList.add('selected');
+        }
+
+        // Remove a classe selecionado.
+        function takeOut(type, choice) {
+            document.getElementById(type + '-choice-' + choice).classList.remove('selected');
+        }
+
+        // Escreve na tela uma mensagem.
+        function message(text) {
+            document.getElementById('message').innerHTML = text;
+        }
+
+        // Escreve no placar o nome do player.
+        function setPlayerName(name) {
+            document.getElementById('player-name').innerHTML = name;
+        }
+
+        // Calcula e retorna quem ganhou.
+        // 0 - Empate
+        // 1 - player
+        // 2 - computer
+        function gauge(player, computer) {
+            if (computerChoice == 1) {
+                if (playerChoice == 1) {
+                    return 0;
+                }
+                if (playerChoice == 2) {
+                    return 1;
+                }
+                if (playerChoice == 3) {
+                    return 2;
+                }
+                if (playerChoice == 4) {
+                    return 1;
+                }
+                if (playerChoice == 5) {
+                    return 2;
+                }
+            }
+            if (computerChoice == 2) {
+                if (playerChoice == 1) {
+                    return 2;
+                }
+                if (playerChoice == 2) {
+                    return 0;
+                }
+                if (playerChoice == 3) {
+                    return 1;
+                }
+                if (playerChoice == 4) {
+                    return 2;
+                }
+                if (playerChoice == 5) {
+                    return 1;
+                }
+            }
+            if (computerChoice == 3) {
+                if (playerChoice == 1) {
+                    return 1;
+                }
+                if (playerChoice == 2) {
+                    return 2;
+                }
+                if (playerChoice == 3) {
+                    return 0;
+                }
+                if (playerChoice == 4) {
+                    return 2;
+                }
+                if (playerChoice == 5) {
+                    return 1;
+                }
+            }
+            if (computerChoice == 4) {
+                if (playerChoice == 1) {
+                    return 1;
+                }
+                if (playerChoice == 2) {
+                    return 2;
+                }
+                if (playerChoice == 3) {
+                    return 1;
+                }
+                if (playerChoice == 4) {
+                    return 0;
+                }
+                if (playerChoice == 5) {
+                    return 2;
+                }
+            }
+            if (computerChoice == 5) {
+                if (playerChoice == 1) {
+                    return 1;
+                }
+                if (playerChoice == 2) {
+                    return 2;
+                }
+                if (playerChoice == 3) {
+                    return 1;
+                }
+                if (playerChoice == 4) {
+                    return 2;
+                }
+                if (playerChoice == 5) {
+                    return 0;
+                }
+            }
+
+        }
+
+        // Soma os pontos do player
+        function sumPointsPlayer() {
+            playerPoints++;
+            document.getElementById('player-points').innerHTML = playerPoints;
+        }
+
+        // Soma os pontos do computer
+        function sumPointsComputer() {
+            computerPoints++;
+            document.getElementById('computer-points').innerHTML = computerPoints;
+        }
+
+        // Função de jogar
+        function play(choice) {
+            playerChoice = choice;
+            select('player', playerChoice);
+
+            computerChoice = draw(1, 5);
+            select('computer', computerChoice);
+
+            var champion = gauge(playerChoice, computerChoice);
+
+            if (champion == 0) {
+                message('Empate');
+            }
+            else if (champion == 1) {
+                message('Ponto para ' + playerName);
+                sumPointsPlayer();
+            }
+            else if (champion == 2) {
+                message('Ponto para o computador');
+                sumPointsComputer();
+            }
+
+            setTimeout(function () {
+                takeOut('player', playerChoice);
+                takeOut('computer', computerChoice);
+                message(playerName + ' selecione uma opção...');
+            }, 3000);
+        }
+
+        document.getElementById('player-choice-1').onclick = function () { play(1); };
+        document.getElementById('player-choice-2').onclick = function () { play(2); };
+        document.getElementById('player-choice-3').onclick = function () { play(3); };
+        document.getElementById('player-choice-4').onclick = function () { play(4); };
+        document.getElementById('player-choice-5').onclick = function () { play(5); };
+
+        playerName = prompt("Qual é o seu nome?");
+        setPlayerName(playerName);
+
+        message('Bem-vindo ' + playerName + ' está preparado(a)? Selecione uma opção acima...');
+    </script>
+</body>
+
+</html>
