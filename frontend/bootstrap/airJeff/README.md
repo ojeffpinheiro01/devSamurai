@@ -14,8 +14,6 @@ Projeto de um website para uma agência de turismo com objetivo de mostrar os ho
 
 
 # :earth_americas: Deploy
-### Front-end WEB: [Netlify](https://air-jeff.netlify.app)<br />
-
 
 # :computer: Tecnologias 
 Este projeto foi desenvolvido com as seguintes tecnologias:
