@@ -14,12 +14,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'new-entry.html',
 })
 export class NewEntryPage {
+  entry = {
+    value: '0,00',
+    category: 1
+  }
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewEntryPage');
+  }
+
+  submitForm(){
+    console.log('Add')
+    console.log(this.entry)
+    this.goBack()
+  }
+  goBack(){
+    console.log('Voltar')
+    this.navCtrl.pop()
   }
 
 }
