@@ -1,12 +1,14 @@
 import React from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { TextInput, Button } from 'react-native-paper'
 
-export default class App extends React.Component{
+export default class App extends React.Component {
   state = {
     height: 0,
     weigth: 0,
     imc: 0,
-    subTitle: ' '
+    subTitle: ' ',
+    color: '#BDC3C7'
   }
   calc = () => {
     const imc = this.state.weigth / (this.state.height * this.state.height)
@@ -15,122 +17,91 @@ export default class App extends React.Component{
     this.setState({ imc: imcFormat })
 
     if (imcFormat < 18.5) {
-      this.setState({subTitle: 'Magreza'})
+      this.setState({ subTitle: 'Magreza', color: '#E74C3C' })
     } else if (imcFormat >= 18.5 && imcFormat < 25) {
-      this.setState({subTitle: 'Normal'})
+      this.setState({ subTitle: 'Normal', color: '#2ECC71' })
     } else if (imcFormat >= 25 && imcFormat < 30) {
-      this.setState({subTitle: 'Sobrepeso'})
+      this.setState({ subTitle: 'Sobrepeso', color: '#F1C40F' })
     } else if (imcFormat >= 30 && imcFormat < 40) {
-      this.setState({subTitle: 'Obeseidade'})
+      this.setState({ subTitle: 'Obeseidade', color: '#E67E22' })
     } else if (imcFormat >= 40) {
-      this.setState({subTitle: 'Obesidade grave'})
+      this.setState({ subTitle: 'Obesidade grave', color: '#E74C3C' })
     }
   }
-  render(){
+  render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Seu IMC</Text>
-  
-        <View style={styles.results}>
+
+        <View style={[styles.results, { backgroundColor: this.state.color }]}>
           <Text style={styles.imcIndex}>{this.state.imc}</Text>
           <Text style={styles.imcResult}>{this.state.subTitle}</Text>
         </View>
-  
+
         <View>
-          <TextInput keyboardType='numeric'
-            style={styles.heightInput}
-            onChangeText={t => {
-              this.setState({height: t.replace(',', '.')});
-            }}
-            placeholder='Altura'/>
-  
+
           <TextInput
             style={styles.weigthIput} keyboardType='numeric'
+            label="peso"
             onChangeText={(t) => {
-              this.setState({weigth: t.replace(',', '.')});
+              this.setState({ weigth: t.replace(',', '.') });
             }}
-            placeholder="Peso"/>
-  
-          <View style={styles.button}>
-            <Button
-                title='CALCULAR'
-                accessibilityLabel='  Pressione para calcular seu IMC'
-                onPress={this.calc}
-              >
-              </Button>
+            placeholder="Peso" />
+
+          <TextInput keyboardType='numeric'
+            style={styles.heightInput}
+            label='altura'
+            onChangeText={t => {
+              this.setState({ height: t.replace(',', '.') });
+            }}
+            placeholder='Altura' />
+
+          <View>
+            <Button onPress={this.calc}
+              mode='contained'
+              accessibilityLabel='  Pressione para calcular seu IMC'
+               >
+              CALCULAR
+            </Button>
           </ View>
         </View>
       </View>
     );
   }
-  }
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 5,
-    alignItems: "center",
-    justifyContent: "flex-start",
+    padding: 10,
+    marginTop: 50,
+    backgroundColor: '#eee'
   },
   title: {
-    fontSize: 42,
-    fontWeight: "bold",
-    textAlign: "center",
-    paddingTop: 40,
+    textAlign: 'center',
+    fontWeight: 'bold'
   },
   results: {
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#E0DEDE",
+    alignSelf: 'center',
+    borderRadius: 5,
     width: 280,
     height: 146,
-    borderRadius: 8,
+    marginVertical: 10,
+    padding: 8
   },
   imcIndex: {
-    fontSize: 36,
-    fontWeight: "bold",
-    lineHeight: 42,
-    color: "#fff",
+    textAlign: 'center',
+    fontSize: 22,
+    fontWeight: 'bold'
   },
   imcResult: {
-    fontSize: 36,
-    lineHeight: 44,
-    color: "#fff",
-    textAlign: "center",
+    textAlign: 'center',
+    fontSize: 16,
   },
   heightInput: {
-    fontSize: 18,
-    backgroundColor: "#E5E5E5",
-    borderColor: "#E5E5E5",
-    borderBottomColor: "#000",
-    borderTopLeftRadius: 8,
-    borderTopRightRadius: 8,
-    borderWidth: 1,
-    height: 57,
-    width: 307,
-    marginTop: 50,
-    padding: 15,
+    marginVertical: 10
   },
   weigthIput: {
-    fontSize: 18,
-    backgroundColor: "#E5E5E5",
-    borderColor: "#E5E5E5",
-    borderBottomColor: "#000",
-    borderTopRightRadius: 8,
-    borderTopLeftRadius: 8,
-    borderWidth: 1,
-    height: 57,
-    width: 307,
-    padding: 15,
-    marginTop: 14,
-  },
-  button: {
-    justifyContent: "center",
-    alignContent: "center",
-    width: 307,
-    height: 57,
-    borderRadius: 8,
-    backgroundColor: "#2C3E50",
-    marginTop: 30,
-  },
+    marginVertical: 10
+  }
 });
