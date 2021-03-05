@@ -9,7 +9,7 @@
 </p>
 
 # :book: Sobre o projeto 
-Projeto de uma aalculadora de IMC feita em React Native
+Projeto de uma calculadora de IMC feita em React Native
 
 
 
