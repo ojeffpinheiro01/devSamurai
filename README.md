@@ -21,8 +21,8 @@ O curso segue as seguintes trilhas:
   - [ ] API Supreme Mastery
   - [ ] Dominando Node.js
 - [ ] Mobile
+  - [x] Meu Primeiro Aplicativo
   - [ ] Dominando o Ionic
-  - [ ] Meu Primeiro Aplicativo
   - [ ] Dominando o Flutter
   - [ ] Publicando seu Aplicativo
 
