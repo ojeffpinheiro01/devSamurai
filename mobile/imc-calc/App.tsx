@@ -60,7 +60,7 @@ export default class App extends React.Component {
             <Button onPress={this.calc}
               mode='contained'
               accessibilityLabel='  Pressione para calcular seu IMC'
-               >
+            >
               CALCULAR
             </Button>
           </ View>
@@ -74,10 +74,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    marginTop: 50,
     backgroundColor: '#eee'
   },
   title: {
+    marginTop: 120,
     textAlign: 'center',
     fontWeight: 'bold'
   },

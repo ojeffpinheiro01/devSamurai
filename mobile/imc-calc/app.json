@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Projeto de uma calculadora de IMC feita em React Native",
+    "githubUrl": "https://github.com/ojeffpinheiro01/devSamurai/tree/main/mobile/imc-calc"
   }
 }
