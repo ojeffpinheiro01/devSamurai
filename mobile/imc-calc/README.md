@@ -50,10 +50,11 @@ Você precisa já ter instalado
 
 ```bash
 ## Clone this repository :floppy_disk:
-$ git clone https://github.com/ojeffoinheiro/basic-react-native.git
+$ git clone https://github.com/ojeffpinheiro01/devSamurai.git
 
 ## Access the project folder at the command prompt
-$ cd basic-react-native
+$ cd devSamurai/mobile/imc-calc
+
 
 ## Install the dependencies
 yarn install
