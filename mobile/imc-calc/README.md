@@ -20,18 +20,30 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - React Native Paper
 ---
 
-# :gear: Como contribuir
-```bash
-- Faça um fork desse repositório;
-- Crie uma branch com a sua feature: git checkout -b minha-feature;
-- Faça commit das suas alterações: git commit -m 'feat: Minha nova feature';
-- Faça push para a sua branch: git push origin minha-feature;
-```
+# :iphone: Rodando no seu smartphone
+## Condição prévia <img src="https://4.bp.blogspot.com/-7eg7Qz3UeWM/UTioF3nxNGI/AAAAAAAAPZk/7H509R6acZU/s1600/gif+aviso.gif" width="40px">
+- Você precisa já ter instalado o Aplicativo do Expo no seu smartfone
+<h3 align="center">
+  <a href="https://apps.apple.com/app/apple-store/id982107779">
+    <img src="https://lh3.googleusercontent.com/E0tCAmPUfK6TNphLns-ZMZOkOD4Sqz0bS4sEhqf4959UMoC7ZjZXt6neaHDBzWpyTcnQdn9kZTk1vNYU1tSrosQNPYxSOmT6WtVS6A" width="200px">
+  </a>
+  <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www">
+    <img src="https://www.passagensimperdiveis.com.br/wp-content/themes/viajar2018/app/botao-baixar-android.png" width="200px">
+  </a>
+ </h3>
+ 
+ 
+ - Abra o Expo 
+ - Clique para scanear o QR Code 
+ - Aponte o celular para o QR Code abaixo:
+ <h3 align="center">
+  <img src="assets/qrcode.png">
+</h3>
 
----
+
 
 # :fire: Rodando em sua máquina
-## Precondition <img src="https://4.bp.blogspot.com/-7eg7Qz3UeWM/UTioF3nxNGI/AAAAAAAAPZk/7H509R6acZU/s1600/gif+aviso.gif" width="40px">
+## Condições prévias <img src="https://4.bp.blogspot.com/-7eg7Qz3UeWM/UTioF3nxNGI/AAAAAAAAPZk/7H509R6acZU/s1600/gif+aviso.gif" width="40px">
 Você precisa já ter instalado
 - NodeJS
 - Package manager (NPM ou Yarn)
@@ -53,6 +65,16 @@ $ react-native run-ios --simulator="iPhone XS Max"
 ### Run the application (Android)
 $ react-native run-android
 ```
+---
+
+# :gear: Como contribuir
+```bash
+- Faça um fork desse repositório;
+- Crie uma branch com a sua feature: git checkout -b minha-feature;
+- Faça commit das suas alterações: git commit -m 'feat: Minha nova feature';
+- Faça push para a sua branch: git push origin minha-feature;
+```
+
 ---
 
 # :mailbox: Contato	
