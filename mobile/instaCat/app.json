@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "App básico para conceitos em React Native feito com expo",
+    "githubUrl": "https://github.com/ojeffpinheiro01/devSamurai/tree/main/mobile/instaCat"
   }
 }
