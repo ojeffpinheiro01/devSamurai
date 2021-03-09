@@ -9,7 +9,6 @@ const App = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Saldo: $2.102,45</Text>
-      <Button title="Adicionar" onPress={addEntry} />
 
       <Text style={styles.category}>Categorias</Text>
       <FlatList
