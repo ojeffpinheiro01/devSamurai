@@ -1,6 +1,8 @@
 # devSamurai
 <h1 align="center">
-    <img alt="DevSamurai" src="https://cursos.devsamurai.com.br/assets/shared/logo-blank-dbb2e723b562d42311c93ab3217a154e0da5dc30969b9714ffab350888f374bd.png" width="200px" /><br />
+    <a href="https://class.devsamurai.com.br">
+        <img alt="DevSamurai" src="https://cursos.devsamurai.com.br/assets/shared/logo-blank-dbb2e723b562d42311c93ab3217a154e0da5dc30969b9714ffab350888f374bd.png" width="200px" /><br />
+    </a>
     Projetos desenvolvidos durante a realização dos cursos do Dev Samurai
 </h1>
 
