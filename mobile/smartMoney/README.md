@@ -77,5 +77,5 @@ $ npm run start
 
 ---
 
->Este projeto foi desenvolvido com ❤️ por **[Jéferson Pinheiro](https://github.com/ojeffpinheiro01/)**, com o instrutor **[Diego Fernandes](https://www.linkedin.com/in/diego-schell-fernandes/)** durante a **[Next Level Week # 4 - Trilha ReactJS](https://nextlevelweek.com/)** da **[Rocketseat](https://rocketseat.com.br)** 💜<br> 
+>Este projeto foi desenvolvido com ❤️ por **[@Jéferson Pinheiro](https://www.linkedin.com/in/jeferson-pinheiro/)**, com o instrutor **[Felipe Fontoura](https://www.linkedin.com/in/felipefontoura/)**. <br> 
 Se te ajudou, dá ⭐, vai me ajudar também 😉
