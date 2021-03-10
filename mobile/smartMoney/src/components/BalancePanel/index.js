@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, Button } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 import BalancePanelLabel from './BalancePanelLabel'
 import BalancePanelChart from './BalancePanelChart'
@@ -9,7 +9,6 @@ const BalancePanel = () => {
         <View style={styles.container}>
             <BalancePanelLabel />
             <BalancePanelChart />
-            <Button title="Adicionar" />
         </View>
     )
 }
