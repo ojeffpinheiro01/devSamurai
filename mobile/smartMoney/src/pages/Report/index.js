@@ -2,14 +2,15 @@ import React from 'react';
 import { View, Button, StyleSheet } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 
-import EntryLabel from '../../components/BalanceLabel';
+import BalanceLabel from '../../components/BalanceLabel';
 import EntrySummary from '../../components/EntrySummary';
 import EntryList from '../../components/EntryList';
 
 const Report = () => {
+  const currentBalance = 2064.35
   return (
     <View style={styles.container}>
-      <EntryLabel />
+      <BalanceLabel currentBalance={currentBalance}/>
       <View>
         <Picker>
           <Picker.Item label="Todas Categorias" />
