@@ -8,6 +8,8 @@ target 'smartMoney' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'RealmJS', :path => '../node_modules/realm'
+
   target 'smartMoneyTests' do
     inherit! :complete
     # Pods for testing
