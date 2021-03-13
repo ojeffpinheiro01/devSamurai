@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
 
 import EntryListItem from './EntryListItem';
 
-const EntryList = ({ entries }) => {
+import { getEntries } from '../../services/Entries'
+
+const EntryList = () => {
+  const [entries, setEntries] = useState([])
+  
+  useEffect(() => {
+    const loadEntries = async () => {
+      const data = await getEntries()
+      setEntries(data)
+    }
+    loadEntries()
+  }, [])
+
   return (
     <View>
       <Text style={styles.title}>Últimos Lançamentos</Text>
