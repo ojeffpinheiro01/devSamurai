@@ -30,6 +30,7 @@ const Colors = {
     light: '#ecf0f1',
     dark: '#34495e',
     background: '#233240',
+    colorBorder: 'rgba(255, 255, 255, 0.2)'
   };
   
   export default Colors;
