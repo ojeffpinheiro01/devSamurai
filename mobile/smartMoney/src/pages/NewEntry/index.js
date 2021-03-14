@@ -6,13 +6,17 @@ import BalanceLabel from '../../components/BalanceLabel';
 import { saveEntry } from '../../services/Entries'
 
 const NewEntry = ({ navigation }) => {
-  const [amount, setAmount] = useState(0)
-
   const currentBalance = 2064.35
+  const currentEntry = navigation.getParam('entry', {
+    id: null,
+    amount: '0.00',
+    entryAt: new Date()
+  })
+  const [amount, setAmount] = useState(`${currentEntry.amount}`)
 
   const save = () => {
-    const value ={ amount: parseFloat(amount) }
-    saveEntry(value)
+    const value = { amount: parseFloat(amount) }
+    saveEntry(value, currentEntry)
     console.log('NewEntry :: save', amount)
   }
 
@@ -24,16 +28,16 @@ const NewEntry = ({ navigation }) => {
         <TextInput
           placeholder='Valor'
           style={styles.input}
-          onChangeText={(t) => setAmount(t) }
-          value={ amount } />
+          onChangeText={(t) => setAmount(t)}
+          value={amount} />
         <TextInput style={styles.input} />
         <Button title="GPS" />
         <Button title="Camera" />
       </View>
 
       <View>
-        <Button title="Adicionar" onPress={ save } />
-        <Button title="Cancelar" onPress={ () => navigation.goBack() } />
+        <Button title="Adicionar" onPress={save} />
+        <Button title="Cancelar" onPress={() => navigation.goBack()} />
       </View>
     </View>
   );
