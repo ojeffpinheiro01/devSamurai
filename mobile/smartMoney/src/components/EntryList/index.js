@@ -1,32 +1,41 @@
-import React from 'react';
-import {View, Text, FlatList, StyleSheet} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { FlatList } from 'react-native';
 
+import { Container } from '../Core/Container'
 import EntryListItem from './EntryListItem';
 
-const EntryList = ({ entries }) => {
+import { getEntries } from '../../services/Entries'
+
+const EntryList = ({onEntryPress, onPressActionButton}) => {
+  const [entries, setEntries] = useState([])
+
+  useEffect(() => {
+    async function loadEntries() {
+      const data = await getEntries()
+      setEntries(data)
+    }
+    loadEntries()
+  }, [])
+
   return (
-    <View>
-      <Text style={styles.title}>Últimos Lançamentos</Text>
+    <Container
+      title='Últimos Lançamentos'
+      actionLabelText='Últimos 7 dias'
+      actionButtonText='Ver mais'
+      onPressActionButton={onPressActionButton} >
       <FlatList
         data={entries}
-        renderItem={({item}) => (
-          <Text style={styles.entry}>- {item.description}- ${item.amount} </Text>
+        keyExtractor={ item => item.id }
+        renderItem={({ item, index }) => (
+          <EntryListItem 
+            entry={item} 
+            isFirstItem={index === 0}
+            isLastItem={index === entries.length - 1}
+            onEntryPress={onEntryPress} />
         )}
       />
-    </View>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    marginTop: 10,
-    marginBottom: 10,
-  },
-});
 
 export default EntryList;
