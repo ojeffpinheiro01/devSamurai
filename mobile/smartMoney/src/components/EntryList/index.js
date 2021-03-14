@@ -26,12 +26,11 @@ const EntryList = () => {
       <FlatList
         data={entries}
         keyExtractor={ item => item.id }
-        renderItem={({ item }) => (
-          <View>
-            <Text style={styles.entry}>
-              - {item.description}- ${item.amount}
-            </Text>
-          </View>
+        renderItem={({ item, index }) => (
+          <EntryListItem 
+            entry={item} 
+            isFirstItem={index === 0}
+            isLastItem={index === entries.length - 1} />
         )}
       />
     </Container>
