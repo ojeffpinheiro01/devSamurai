@@ -12,7 +12,7 @@ const Main = ({navigation}) => {
     <View style={styles.container}>
       <BalancePanel onNewEntryPress={() => navigation.navigate('NewEntry') } />
       <EntrySummary />
-      <EntryList navigation={ navigation } />
+      <EntryList />
     </View>
   );
 };
