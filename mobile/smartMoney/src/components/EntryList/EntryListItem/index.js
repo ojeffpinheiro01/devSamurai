@@ -55,7 +55,7 @@ const EntryListItem = ({ entry, isFirstItem, isLastItem, onEntryPress }) => {
           </View>
         </View>
         <View style={styles.amount}>
-          <Text style={styles.amountText}>$10</Text>
+          <Text style={styles.amountText}>${entry.amount}</Text>
         </View>
       </View>
     </TouchableOpacity>

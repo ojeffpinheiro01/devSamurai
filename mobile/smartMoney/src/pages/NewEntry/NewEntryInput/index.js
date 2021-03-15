@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text'
 
 import Colors from '../../../styles/colors'
 
-
 const NewEntryInput = ({ value, onChangeValue }) => {
+  const [debit, setDebit] = useState((value < 0) ? -1 : 1)
+  const [debitPrefix, setDebitPrefix] = useState((value < 0) ? '-' : '');
+
+  const onChangeDebitCredit = () => {
+    if (debit < 0) {
+      setDebit(1);
+      setDebitPrefix('')
+    } else {
+      setDebit(-1)
+      setDebitPrefix('-')
+    }
+    onChangeValue(value * -1)
+  }
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        style={styles.debitButton}>
-        <Text style={styles.debitButtonPrefix}>-</Text>
+        style={styles.debitButton}
+        onPress={onChangeDebitCredit}>
+        <Text style={styles.debitButtonPrefix}>{debitPrefix}</Text>
         <Text style={styles.debitButtonText}>R$</Text>
       </TouchableOpacity>
       <TextInputMask
@@ -26,7 +40,7 @@ const NewEntryInput = ({ value, onChangeValue }) => {
         value={value}
         includeRawValueInChangeText={true}
         onChangeText={(maskedValue, rawValue) => {
-          onChangeValue(rawValue)
+          onChangeValue(rawValue * debit)
         }} />
     </View>
   );

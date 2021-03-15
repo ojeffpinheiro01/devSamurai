@@ -13,7 +13,7 @@ const NewEntry = ({ navigation }) => {
     amount: '0.00',
     entryAt: new Date()
   })
-  const [amount, setAmount] = useState(`${currentEntry.amount}`)
+  const [amount, setAmount] = useState(currentEntry.amount)
 
   const isValid = () => {
     if(parseFloat(amount) !== '0'){
