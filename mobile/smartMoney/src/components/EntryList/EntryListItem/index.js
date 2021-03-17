@@ -10,8 +10,7 @@ const EntryListItem = ({ entry, isFirstItem, isLastItem, onEntryPress }) => {
   const bulletLineY = isFirstItem ? 25 : 0;
   const bulletLineHeight = isLastItem ? 25 : 50;
   const showBulletLine = !(isFirstItem && isLastItem);
-  // const bulletColor = entry.category.color || Colors.white;
-  const bulletColor = Colors.blue;
+  const bulletColor = entry.category.color || Colors.white;
 
   return (
     <TouchableOpacity onPress={() => {

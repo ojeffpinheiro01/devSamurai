@@ -1,45 +1,57 @@
 import React, { useEffect, useState } from 'react'
 import { View, TouchableOpacity, Text, Modal, StyleSheet, FlatList } from 'react-native'
 
-import { getAllCategories } from '../../../services/Categories'
+import { getDebitCategories, getCreditCategories } from '../../../services/Categories'
 
 import Colors from '../../../styles/colors'
 
-const NewEntryCategoryPicker = () => {
+const NewEntryCategoryPicker = ({debit, category, onChangeCategory}) => {
   const [isModalVisible, setIsModalVisible] = useState(false)
-  const [categories, setCategories] = useState([]);
+  const [debitCategories, setDebitCategories] = useState([])
+  const [creditCategories, setCreditCategories] = useState([])
 
   useEffect(() => {
     async function loadCategories() {
-      const data = await getAllCategories()
-      setCategories(data)
+      setDebitCategories(await getDebitCategories())
+      setCreditCategories(await getCreditCategories())
     }
     loadCategories()
-  }, [])
+  }, []);
+
+  const onCategoryPress = (item) => {
+    onChangeCategory(item);
+    onClosePress();
+  };
+
+  const onClosePress = () => {
+    setIsModalVisible(false);
+  };
 
   return (
     <View>
       <TouchableOpacity
         style={styles.pickerButton}
         onPress={() => { setIsModalVisible(true) }}>
-        <Text style={styles.pickerButtonText}>Alimentação</Text>
+        <Text style={styles.pickerButtonText}>{category.name}</Text>
       </TouchableOpacity>
       <Modal animationType="slide" transparent={false} visible={isModalVisible}>
         <View style={styles.modal}>
           <FlatList
-            data={categories}
+            data={debit ? debitCategories : creditCategories}
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => (
-              <TouchableOpacity style={styles.pickerButton}>
-                <Text 
-                  style={[styles.modalItemText, { color: item.color }]}>
-                    {item.name}
-                </Text>
+              <TouchableOpacity 
+                style={styles.pickerButton}
+                onPress={() => { onCategoryPress(item) } }>
+                  <Text 
+                    style={[styles.modalItemText, { color: item.color }]}>
+                      {item.name}
+                  </Text>
               </TouchableOpacity>
             )} />
           <TouchableOpacity 
             style={styles.closeButton}
-            onPress={() => { setIsModalVisible(false) }}>
+            onPress={onClosePress}>
               <Text style={styles.closeButtonText}>FECHAR</Text>
           </TouchableOpacity>
         </View>

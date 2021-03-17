@@ -12,10 +12,14 @@ import { saveEntry, delEntry } from '../../services/Entries'
 const NewEntry = ({ navigation }) => {
   const currentEntry = navigation.getParam('entry', {
     id: null,
-    amount: '0.00',
+    amount: 0,
+    category: {id: null, name: 'Selecione'},
     entryAt: new Date()
   })
+
+  const [debit, setDebit] = useState(currentEntry.amount <=0)
   const [amount, setAmount] = useState(currentEntry.amount)
+  const [category, setCategory] = useState(currentEntry.category)
 
   const isValid = () => {
     if(parseFloat(amount) !== '0'){
@@ -25,7 +29,10 @@ const NewEntry = ({ navigation }) => {
   }
 
   const onSave = () => {
-    const value = { amount: parseFloat(amount) }
+    const value = { 
+      amount: parseFloat(amount),
+      category:   category
+  }
     saveEntry(value, currentEntry)
     console.log('NewEntry :: save', amount)
     onClose()
@@ -45,8 +52,10 @@ const NewEntry = ({ navigation }) => {
       <BalanceLabel />
 
       <View>
-        <NewEntryInput value={amount} onChangeValue={setAmount} />
-        <NewEntryCategoryPicker />
+        <NewEntryInput 
+          value={amount} onChangeValue={setAmount} onChangeDebit={setDebit} />
+        <NewEntryCategoryPicker 
+          debit={debit} category={category} onChangeCategory={setCategory} />
         <Button title="GPS" />
         <Button title="Camera" />
       </View>
