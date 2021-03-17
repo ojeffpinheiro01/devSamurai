@@ -2,13 +2,15 @@ import Realm from 'realm'
 import EntrySchema from '../schemas/EntrySchema'
 import CategorySchema from '../schemas/CategorySchema'
 
-import { getAllCategories } from './Categories'
+import { getDefaultCategories } from './Categories'
 
 export const getRealm = async () => {
   const realm = await Realm.open({
     schema: [CategorySchema, EntrySchema],
     schemaVersion: 2
   })
+
+  //dropDB(realm)
   initDB(realm)
   return realm
 };
@@ -18,7 +20,7 @@ export const initDB = (realm) => {
   console.log(`initDB :: quantidade de categorias no DB: ${categoriesLength}`)
 
   if (categoriesLength === 0) {
-    const categories = getAllCategories()
+    const categories = getDefaultCategories()
     console.log(`initBD :: iniciando DB...`)
 
     try {
@@ -34,4 +36,11 @@ export const initDB = (realm) => {
   } else {
     console.log('initDB :: categorias já existem... saindo')
   }
-};
+}
+
+export const dropDB = realm => {
+  console.log('dropDB :: dropping db...');
+  realm.write(() => {
+    realm.deleteAll()
+  })
+}
