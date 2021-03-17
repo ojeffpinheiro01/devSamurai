@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import React, { useState } from 'react'
+import { View, StyleSheet } from 'react-native'
 
-import BalanceLabel from '../../components/BalanceLabel';
+import ActionFooter, { ActionPrimaryButton, ActionSecondaryButton } from '../../components/Core/ActionFooter'
+import BalanceLabel from '../../components/BalanceLabel'
+
 import NewEntryInput from './NewEntryInput'
 import NewEntryCategoryPicker from './NewEntryCategoryPicker'
+import NewEntryDatePicker from './NewEntryDatePicker'
+import NewEntryDeleteAction from './NewEntryDeleteAction'
 
 import Colors from '../../styles/colors'
 
@@ -13,26 +17,28 @@ const NewEntry = ({ navigation }) => {
   const currentEntry = navigation.getParam('entry', {
     id: null,
     amount: 0,
-    category: {id: null, name: 'Selecione'},
+    category: { id: null, name: 'Selecione' },
     entryAt: new Date()
   })
 
-  const [debit, setDebit] = useState(currentEntry.amount <=0)
+  const [debit, setDebit] = useState(currentEntry.amount <= 0)
   const [amount, setAmount] = useState(currentEntry.amount)
   const [category, setCategory] = useState(currentEntry.category)
+  const [entryAt, setEntryAt] = useState(currentEntry.entryAt)
 
   const isValid = () => {
-    if(parseFloat(amount) !== '0'){
+    if (parseFloat(amount) !== '0') {
       return true
     }
     return false
   }
 
   const onSave = () => {
-    const value = { 
+    const value = {
       amount: parseFloat(amount),
-      category:   category
-  }
+      category: category,
+      entryAt: entryAt
+    }
     saveEntry(value, currentEntry)
     console.log('NewEntry :: save', amount)
     onClose()
@@ -51,21 +57,26 @@ const NewEntry = ({ navigation }) => {
     <View style={styles.container}>
       <BalanceLabel />
 
-      <View>
-        <NewEntryInput 
+      <View style={styles.formContainer}>
+        <NewEntryInput
           value={amount} onChangeValue={setAmount} onChangeDebit={setDebit} />
-        <NewEntryCategoryPicker 
+        <NewEntryCategoryPicker
           debit={debit} category={category} onChangeCategory={setCategory} />
-        <Button title="GPS" />
-        <Button title="Camera" />
-      </View>
 
+        <View style={styles.formActionContainer}>
+          <NewEntryDatePicker
+            value={entryAt} onChange={setEntryAt} />
+          <NewEntryDeleteAction entry={currentEntry} onOkPress={onDel} />
+        </View>
+
+      </View>
       <View>
-        <Button title="Adicionar" onPress={() => {
-          isValid() && onSave()
-        }} />
-        <Button title="Excluir" onPress={ onDel } />
-        <Button title="Cancelar" onPress={ onClose } />
+        <ActionFooter>
+          <ActionPrimaryButton 
+            title={currentEntry.id ? 'Atualizar' : 'Salvar'} onPress={() => { isValid() && onSave() }} />
+          <ActionSecondaryButton 
+            title='Cancelar' onPress={onClose} />
+        </ActionFooter>
       </View>
     </View>
   );
@@ -75,17 +86,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.background,
-    padding: 10,
+    padding: 10
   },
   formContainer: {
     flex: 1,
-    paddingVertical: 20,
+    paddingVertical: 20
   },
   formActionContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginVertical: 10,
+    marginVertical: 10
   }
-});
+})
 
-export default NewEntry;
+export default NewEntry
