@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { View, TextInput, Button, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 
+import ActionFooter, { ActionPrimaryButton, ActionSecondaryButton } from '../../components/Core/ActionFooter'
 import BalanceLabel from '../../components/BalanceLabel'
+
 import NewEntryInput from './NewEntryInput'
 import NewEntryCategoryPicker from './NewEntryCategoryPicker'
 import NewEntryDatePicker from './NewEntryDatePicker'
@@ -64,17 +66,17 @@ const NewEntry = ({ navigation }) => {
         <View style={styles.formActionContainer}>
           <NewEntryDatePicker
             value={entryAt} onChange={setEntryAt} />
-          <NewEntryDeleteAction entry={
-            
-          } onOkPress={delEntry} />
+          <NewEntryDeleteAction entry={currentEntry} onOkPress={onDel} />
         </View>
 
       </View>
       <View>
-        <Button title="Adicionar" onPress={() => {
-          isValid() && onSave()
-        }} />
-        <Button title="Cancelar" onPress={onClose} />
+        <ActionFooter>
+          <ActionPrimaryButton 
+            title={currentEntry.id ? 'Atualizar' : 'Salvar'} onPress={() => { isValid() && onSave() }} />
+          <ActionSecondaryButton 
+            title='Cancelar' onPress={onClose} />
+        </ActionFooter>
       </View>
     </View>
   );

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { View, TouchableOpacity, Text, Modal, StyleSheet, FlatList } from 'react-native'
 
+import ActionFooter, { ActionPrimaryButton } from '../../../components/Core/ActionFooter'
+
 import { getDebitCategories, getCreditCategories } from '../../../services/Categories'
 
 import Colors from '../../../styles/colors'
@@ -34,26 +36,26 @@ const NewEntryCategoryPicker = ({debit, category, onChangeCategory}) => {
         onPress={() => { setIsModalVisible(true) }}>
         <Text style={styles.pickerButtonText}>{category.name}</Text>
       </TouchableOpacity>
-      <Modal animationType="slide" transparent={false} visible={isModalVisible}>
+      <Modal 
+        animationType="slide" transparent={false} visible={isModalVisible}>
         <View style={styles.modal}>
           <FlatList
             data={debit ? debitCategories : creditCategories}
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => (
               <TouchableOpacity 
-                style={styles.pickerButton}
-                onPress={() => { onCategoryPress(item) } }>
+                style={styles.pickerButton} onPress={() => { onCategoryPress(item) } }>
                   <Text 
                     style={[styles.modalItemText, { color: item.color }]}>
                       {item.name}
                   </Text>
               </TouchableOpacity>
             )} />
-          <TouchableOpacity 
-            style={styles.closeButton}
-            onPress={onClosePress}>
-              <Text style={styles.closeButtonText}>FECHAR</Text>
-          </TouchableOpacity>
+
+          <ActionFooter>
+            <ActionPrimaryButton 
+              title='FECHAR' onPress={onClosePress} />
+          </ActionFooter>
         </View>
       </Modal>
     </View>
@@ -81,22 +83,6 @@ const styles = StyleSheet.create({
   modalItemText: {
     fontSize: 22,
     color: Colors.white,
-    textAlign: 'center',
-  },
-  closeButton: {
-    alignSelf: 'center',
-    backgroundColor: Colors.background,
-    borderColor: Colors.green,
-    borderWidth: 2,
-    borderRadius: 15,
-    marginVertical: 10,
-    marginHorizontal: 20,
-    paddingVertical: 3,
-    paddingHorizontal: 20,
-  },
-  closeButtonText: {
-    color: Colors.green,
-    fontSize: 18,
     textAlign: 'center',
   },
 });
