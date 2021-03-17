@@ -63,7 +63,6 @@ const EntryListItem = ({ entry, isFirstItem, isLastItem, onEntryPress }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
   },
   bullet: {},
