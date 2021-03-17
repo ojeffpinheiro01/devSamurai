@@ -5,6 +5,7 @@ import BalanceLabel from '../../components/BalanceLabel'
 import NewEntryInput from './NewEntryInput'
 import NewEntryCategoryPicker from './NewEntryCategoryPicker'
 import NewEntryDatePicker from './NewEntryDatePicker'
+import NewEntryDeleteAction from './NewEntryDeleteAction'
 
 import Colors from '../../styles/colors'
 
@@ -63,6 +64,9 @@ const NewEntry = ({ navigation }) => {
         <View style={styles.formActionContainer}>
           <NewEntryDatePicker
             value={entryAt} onChange={setEntryAt} />
+          <NewEntryDeleteAction entry={
+            
+          } onOkPress={delEntry} />
         </View>
 
       </View>
@@ -70,7 +74,6 @@ const NewEntry = ({ navigation }) => {
         <Button title="Adicionar" onPress={() => {
           isValid() && onSave()
         }} />
-        <Button title="Excluir" onPress={onDel} />
         <Button title="Cancelar" onPress={onClose} />
       </View>
     </View>
