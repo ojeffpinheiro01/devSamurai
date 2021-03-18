@@ -18,16 +18,16 @@ const NewEntryCategoryPicker = ({debit, category, onChangeCategory}) => {
       setCreditCategories(await getCreditCategories())
     }
     loadCategories()
-  }, []);
+  }, [])
 
   const onCategoryPress = (item) => {
-    onChangeCategory(item);
-    onClosePress();
-  };
+    onChangeCategory(item)
+    onClosePress()
+  }
 
   const onClosePress = () => {
-    setIsModalVisible(false);
-  };
+    setIsModalVisible(false)
+  }
 
   return (
     <View>
@@ -59,8 +59,8 @@ const NewEntryCategoryPicker = ({debit, category, onChangeCategory}) => {
         </View>
       </Modal>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   pickerButton: {
@@ -85,6 +85,6 @@ const styles = StyleSheet.create({
     color: Colors.white,
     textAlign: 'center',
   },
-});
+})
 
-export default NewEntryCategoryPicker;
+export default NewEntryCategoryPicker

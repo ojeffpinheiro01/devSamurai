@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { FlatList } from 'react-native';
+import React, { useEffect, useState } from 'react'
+import { FlatList } from 'react-native'
 
 import { Container } from '../Core/Container'
-import EntryListItem from './EntryListItem';
+import EntryListItem from './EntryListItem'
 
 import { getEntries } from '../../services/Entries'
 
@@ -15,7 +15,7 @@ const EntryList = ({ days = 7, onEntryPress, onPressActionButton }) => {
       setEntries(data)
     }
     loadEntries()
-  }, [])
+  }, [days])
 
   return (
     <Container
@@ -35,7 +35,7 @@ const EntryList = ({ days = 7, onEntryPress, onPressActionButton }) => {
         )}
       />
     </Container>
-  );
-};
+  )
+}
 
-export default EntryList;
+export default EntryList

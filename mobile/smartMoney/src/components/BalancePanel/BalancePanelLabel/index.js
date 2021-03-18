@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
 
 import Colors from '../../../styles/colors'
 
@@ -9,12 +9,12 @@ const BalancePanelLabel = ({ currentBalance }) => {
       <Text style={styles.label}>Saldo atual</Text>
       <Text style={styles.value}>{ currentBalance }</Text>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
+    alignItems: 'center'
   },
   label: {
     fontSize: 14,
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   value: {
     fontSize: 36,
     color: Colors.white
-  },
-});
+  }
+})
 
-export default BalancePanelLabel;
+export default BalancePanelLabel

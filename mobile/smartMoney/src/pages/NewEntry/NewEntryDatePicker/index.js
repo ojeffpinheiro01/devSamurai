@@ -12,11 +12,11 @@ const NewEntryDatePicker = ({value, onChange}) => {
   const onChangeValue = (date) => {
     onChange(date)
     onCancel()
-  };
+  }
 
   const onCancel = () => {
     setModalIsVisible(false)
-  };
+  }
 
   return (
     <View>
@@ -41,8 +41,8 @@ const NewEntryDatePicker = ({value, onChange}) => {
         onCancel={onCancel}
       />
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   btn: {
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     margin: 2
-  },
-});
+  }
+})
 
 export default NewEntryDatePicker

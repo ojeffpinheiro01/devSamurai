@@ -1,5 +1,5 @@
-import { getUUID } from './uuid';
-import { getRealm } from './Realm';
+import { getUUID } from './uuid'
+import { getRealm } from './Realm'
 
 export const getDefaultCategories = () => {
   return [
@@ -122,25 +122,25 @@ export const getAllCategories = async () => {
 }
 
 export const getDebitCategories = async () => {
-  const realm = await getRealm();
+  const realm = await getRealm()
   return realm
     .objects('Category')
     .filtered('isDebit = true AND isInit = false')
-    .sorted('order');
-};
+    .sorted('order')
+}
 
 export const getCreditCategories = async () => {
-  const realm = await getRealm();
+  const realm = await getRealm()
   return realm
     .objects('Category')
     .filtered('isCredit = true AND isInit = false')
-    .sorted('order');
-};
+    .sorted('order')
+}
 
 export const getInitCategories = async () => {
-  const realm = await getRealm();
+  const realm = await getRealm()
   return realm
     .objects('Category')
     .filtered('isInit = true')
     .sorted('order')
-};
+}

@@ -14,9 +14,9 @@ export const getEntries = async (days) => {
     realm = realm.filtered('entryAt >= $0', date)
   }
   
-  const entries = realm.sorted('entryAt', true);
+  const entries = realm.sorted('entryAt', true)
   return entries
-};
+}
 
 export const saveEntry = async (value, entry = {}) => {
   const realm = await getRealm()
@@ -31,10 +31,9 @@ export const saveEntry = async (value, entry = {}) => {
         entryAt: value.entryAt || entry.entryAt,
         description: value.category.name,
         isInit: false
-      };
+      }
       realm.create('Entry', data, true)
-    });
-    console.log('saveEntry :: data: ', JSON.stringify(data))
+    })
   } catch (err) {
     console.log('saveEntry :: erro ao salvar ' + JSON.stringify(data))
     console.log(err)
@@ -42,7 +41,7 @@ export const saveEntry = async (value, entry = {}) => {
   }
 
   return data
-};
+}
 
 export const delEntry = async (entry) => {
   const realm = await getRealm()

@@ -1,12 +1,11 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import React from 'react'
+import { View, StyleSheet } from 'react-native'
 const EntrySummaryChart = () => {
-  return <View style={styles.container} />;
-};
+  return <View style={styles.container} />
+}
 
 const styles = StyleSheet.create({
-  container: {
-  },
-});
+  container: {}
+})
 
-export default EntrySummaryChart;
+export default EntrySummaryChart

@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import Colors from '../../../styles/colors'
 
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         borderStyle: 'solid',
         borderWidth: 1,
         borderColor: Colors.colorBorder,
-        padding: 8,
+        padding: 8
     },
     title: {
         fontSize: 15,
@@ -57,23 +57,23 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     actionContainer: {
-        flexDirection: 'row',
+        flexDirection: 'row'
     },
     actionLabel: {
         flex: 1,
         fontSize: 12,
-        color: Colors.white,
+        color: Colors.white
     },
     actionButton: {
-        flexDirection: 'row',
+        flexDirection: 'row'
     },
     actionButtonIcon: {
         color: Colors.white,
         marginTop: 3,
-        marginRight: 2,
+        marginRight: 2
     },
     actionButtonText: {
         fontSize: 12,
-        color: Colors.white,
+        color: Colors.white
     },
-});
+})

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Alert, View, TouchableOpacity, StyleSheet } from 'react-native';
+import React from 'react'
+import { Alert, View, TouchableOpacity, StyleSheet } from 'react-native'
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
-import Colors from '../../../styles/colors';
+import Colors from '../../../styles/colors'
 
 const NewEntryDeleteAction = ({ entry, onOkPress }) => {
     const onDelete = () => {
@@ -12,11 +12,11 @@ const NewEntryDeleteAction = ({ entry, onOkPress }) => {
             'Você deseja realmente apagar este lançamento?',
             [
                 { text: 'Não', style: 'cancel' },
-                { text: 'Sim', onPress: () => onOkPress() },
+                { text: 'Sim', onPress: () => onOkPress() }
             ],
-            { cancelable: false },
-        );
-    };
+            { cancelable: false }
+        )
+    }
 
     return (
         entry.id && (
@@ -26,9 +26,8 @@ const NewEntryDeleteAction = ({ entry, onOkPress }) => {
                 </TouchableOpacity>
             </View>
         )
-
-    );
-};
+    )
+}
 
 const styles = StyleSheet.create({
     button: {
@@ -40,6 +39,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         margin: 2,
     },
-});
+})
 
-export default NewEntryDeleteAction;
+export default NewEntryDeleteAction

@@ -15,4 +15,4 @@ const EntrySchema = {
     }
 }
 
-export default EntrySchema;
+export default EntrySchema

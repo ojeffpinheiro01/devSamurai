@@ -1,9 +1,9 @@
-import React from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
+import React from 'react'
+import { View, StyleSheet, ScrollView } from 'react-native'
 
-import BalancePanel from '../../components/BalancePanel';
-import EntrySummary from '../../components/EntrySummary';
-import EntryList from '../../components/EntryList';
+import BalancePanel from '../../components/BalancePanel'
+import EntrySummary from '../../components/EntrySummary'
+import EntryList from '../../components/EntryList'
 
 import Colors from '../../styles/colors'
 
@@ -21,12 +21,13 @@ const Main = ({ navigation }) => {
           onPressActionButton={() => navigation.navigate('Report')} />
       </ScrollView>
     </View>
-  );
-};
+  )
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.background
   },
-});
-export default Main;
+})
+
+export default Main
