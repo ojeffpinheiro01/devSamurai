@@ -20,9 +20,14 @@ const Report = ({ navigation }) => {
       <View>
         <Picker>
           <Picker.Item label="Todas Categorias" />
+          <Picker.Item label="Alimentação" />
+          <Picker.Item label="Mercado" />
+          <Picker.Item label="Compras" />
         </Picker>
         <Picker>
           <Picker.Item label="Últimos 7 dias" />
+          <Picker.Item label="Últimos 15 dias" />
+          <Picker.Item label="Últimos 30 dias" />
         </Picker>
       </View>
       <ScrollView>
@@ -45,7 +50,7 @@ const styles = StyleSheet.create({
   filtersContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginVertical: 5,
+    marginVertical: 5
   },
   filterButton: {
     flexDirection: 'row',
@@ -54,11 +59,11 @@ const styles = StyleSheet.create({
     borderRadius: 150,
     paddingVertical: 5,
     paddingHorizontal: 10,
-    marginHorizontal: 5,
+    marginHorizontal: 5
   },
   filterButtonText: {
-    color: Colors.champagneDark,
+    color: Colors.champagneDark
   }
 })
 
-export default Report;
+export default Report

@@ -1,17 +1,26 @@
-import {Alert} from 'react-native';
-import { getRealm } from './Realm';
+import { Alert } from 'react-native'
+
+import { getRealm } from './Realm'
 import { getUUID } from './uuid'
 
-export const getEntries = async () => {
-  const realm = await getRealm();
-  const entries = realm.objects('Entry').sorted('entryAt', true)
-  console.log('getEntries :: entries: ', JSON.stringify(entries))
-  return entries;
+import moment from '../vendors/moment'
+
+export const getEntries = async (days) => {
+  let realm = await getRealm()
+  realm = realm.objects('Entry')
+
+  if (days > 0) {
+    const date = moment().subtract(days, 'days').toDate()
+    realm = realm.filtered('entryAt >= $0', date)
+  }
+  
+  const entries = realm.sorted('entryAt', true);
+  return entries
 };
 
 export const saveEntry = async (value, entry = {}) => {
-  const realm = await getRealm();
-  let data = {};
+  const realm = await getRealm()
+  let data = {}
 
   try {
     realm.write(() => {
@@ -23,20 +32,20 @@ export const saveEntry = async (value, entry = {}) => {
         description: value.category.name,
         isInit: false
       };
-      realm.create('Entry', data, true);
+      realm.create('Entry', data, true)
     });
-    console.log('saveEntry :: data: ', JSON.stringify(data));
+    console.log('saveEntry :: data: ', JSON.stringify(data))
   } catch (err) {
-    console.log('saveEntry :: erro ao salvar ' + JSON.stringify(data));
+    console.log('saveEntry :: erro ao salvar ' + JSON.stringify(data))
     console.log(err)
-    Alert.alert('Oops', 'Erro ao salvar');
+    Alert.alert('Oops', 'Erro ao salvar')
   }
 
-  return data;
+  return data
 };
 
 export const delEntry = async (entry) => {
-  const realm = await getRealm();
+  const realm = await getRealm()
 
   try {
     realm.write(() => { realm.delete(entry) })
