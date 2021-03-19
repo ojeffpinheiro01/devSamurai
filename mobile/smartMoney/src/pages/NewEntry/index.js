@@ -11,7 +11,7 @@ import NewEntryDeleteAction from './NewEntryDeleteAction'
 
 import Colors from '../../styles/colors'
 
-import { saveEntry, delEntry } from '../../services/Entries'
+import useEntries from '../../hooks/useEntries'
 
 const NewEntry = ({ navigation }) => {
   const currentEntry = navigation.getParam('entry', {
@@ -20,6 +20,8 @@ const NewEntry = ({ navigation }) => {
     category: { id: null, name: 'Selecione' },
     entryAt: new Date()
   })
+
+  const [_, saveEntry, delEntry] = useEntries()
 
   const [debit, setDebit] = useState(currentEntry.amount <= 0)
   const [amount, setAmount] = useState(currentEntry.amount)
