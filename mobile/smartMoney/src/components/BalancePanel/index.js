@@ -7,16 +7,18 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import BalancePanelLabel from './BalancePanelLabel'
 import BalancePanelChart from './BalancePanelChart'
 
+import useBalance from '../../hooks/useBalance'
+
 import Colors from '../../styles/colors'
 
 const BalancePanel = ({ onNewEntryPress }) => {
-  const currentBalance = 2064.35
+  const [balance] = useBalance()
   
     return (
         <View style={styles.container}>
             <LinearGradient colors={[Colors.violet, Colors.blue]}
                 style={styles.panel}>
-                <BalancePanelLabel currentBalance={currentBalance} />
+                <BalancePanelLabel currentBalance={balance} />
                 <BalancePanelChart />
             </LinearGradient>
             <TouchableOpacity style={styles.button} 
