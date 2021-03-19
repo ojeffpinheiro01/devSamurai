@@ -4,18 +4,12 @@ import { FlatList } from 'react-native'
 import { Container } from '../Core/Container'
 import EntryListItem from './EntryListItem'
 
+import useEntries from '../../hooks/useEntries'
+
 import { getEntries } from '../../services/Entries'
 
 const EntryList = ({days = 7, category, onEntryPress, onPressActionButton}) => {
-  const [entries, setEntries] = useState([])
-
-  useEffect(() => {
-    async function loadEntries() {
-      const data = await getEntries(days, category)
-      setEntries(data)
-    }
-    loadEntries()
-  }, [days, category])
+  const [entries] = useEntries(days, category)
 
   return (
     <Container
