@@ -14,7 +14,8 @@ const BalancePanelLabel = ({ currentBalance }) => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center'
+    alignItems: 'center',
+    zIndex: 1
   },
   label: {
     fontSize: 14,
