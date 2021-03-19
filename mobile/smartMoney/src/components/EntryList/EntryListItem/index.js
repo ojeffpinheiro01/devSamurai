@@ -1,16 +1,16 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React from 'react'
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 
-import Svg, { Circle, Rect } from 'react-native-svg';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Svg, { Circle, Rect } from 'react-native-svg'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import Colors from '../../../styles/colors'
 
 const EntryListItem = ({ entry, isFirstItem, isLastItem, onEntryPress }) => {
-  const bulletLineY = isFirstItem ? 25 : 0;
-  const bulletLineHeight = isLastItem ? 25 : 50;
-  const showBulletLine = !(isFirstItem && isLastItem);
-  const bulletColor = entry.category.color || Colors.white;
+  const bulletLineY = isFirstItem ? 25 : 0
+  const bulletLineHeight = isLastItem ? 25 : 50
+  const showBulletLine = !(isFirstItem && isLastItem)
+  const bulletColor = entry.category.color || Colors.white
 
   return (
     <TouchableOpacity onPress={() => {
@@ -58,12 +58,11 @@ const EntryListItem = ({ entry, isFirstItem, isLastItem, onEntryPress }) => {
         </View>
       </View>
     </TouchableOpacity>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
   },
   bullet: {},
@@ -104,6 +103,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: Colors.white,
   },
-});
+})
 
-export default EntryListItem;
+export default EntryListItem

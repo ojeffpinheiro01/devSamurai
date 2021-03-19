@@ -11,6 +11,6 @@ const CategorySchema = {
     isDebit: {type: 'bool', default: false},
     order: {type: 'int', default: 0},
     entries: 'Entry[]',
-  },
-};
-export default CategorySchema;
+  }
+}
+export default CategorySchema

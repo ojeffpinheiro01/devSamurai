@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 import { Container } from '../Core/Container'
-import EntrySummaryChart from './EntrySummaryChart';
-import EntrySummaryList from './EntrySummaryList';
+import EntrySummaryChart from './EntrySummaryChart'
+import EntrySummaryList from './EntrySummaryList'
 
 const EntrySummary = ({ onPressActionButton }) => {
   const entriesGrouped = [
@@ -10,7 +10,7 @@ const EntrySummary = ({ onPressActionButton }) => {
     {key: '2', description: 'Combustível', amount: 12},
     {key: '3', description: 'Aluguel', amount: 120},
     {key: '4', description: 'Lazer', amount: 250},
-    {key: '5', description: 'Outros', amount: 1200},
+    {key: '5', description: 'Outros', amount: 1200}
   ]
 
   return (
@@ -22,7 +22,7 @@ const EntrySummary = ({ onPressActionButton }) => {
       <EntrySummaryChart />
       <EntrySummaryList entriesGrouped={entriesGrouped} />
     </Container>
-  );
-};
+  )
+}
 
-export default EntrySummary;
+export default EntrySummary

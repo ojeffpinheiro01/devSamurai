@@ -1,51 +1,107 @@
-import React from 'react';
-import { View, Button, StyleSheet } from 'react-native';
-import {Picker} from '@react-native-picker/picker';
+import React, { useState } from 'react'
+import { View, TouchableOpacity, Text, ScrollView,  StyleSheet } from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
-import BalanceLabel from '../../components/BalanceLabel';
-import EntrySummary from '../../components/EntrySummary';
-import EntryList from '../../components/EntryList';
 
-const Report = () => {
-  const currentBalance = 2064.35
-  const entries = [
-    {key: '1', description: 'Padaria Asa Branca', amount: 10},
-    {key: '2', description: 'Supermercado Isadora', amount: 190},
-    {key: '3', description: 'Posto Ipiranga', amount: 290},
-  ]
-  const entriesGrouped = [
-    {key: '1', description: 'Alimentação', amount: 201},
-    {key: '2', description: 'Combustível', amount: 12},
-    {key: '3', description: 'Aluguel', amount: 120},
-    {key: '4', description: 'Lazer', amount: 250},
-    {key: '5', description: 'Outros', amount: 1200},
-  ]
+import ActionFooter, { ActionPrimaryButton } from '../../components/Core/ActionFooter'
+import BalanceLabel from '../../components/BalanceLabel'
+import EntrySummary from '../../components/EntrySummary'
+import EntryList from '../../components/EntryList'
+import RelativeDaysModal from '../../components/RelativeDaysModal'
+import CategoryModal from '../../components/CategoryModal'
+
+import Colors from '../../styles/colors'
+
+const Report = ({ navigation }) => {
+  const [relativeDaysModalVisible, setRelativeDaysModalVisible] = useState(false)
+  const [categoryModalVisible, setCategoryModalVisible] = useState(false)
+  const [relativeDays, setRelativeDays] = useState(7);
+  const [category, setCategory] = useState({ id: null, name: 'Todas Categorias' })
+  
+  const onRelativeDaysPress = (item) => {
+    setRelativeDays(item)
+    onRelativeDaysClosePress()
+  }
+
+  const onCategoryPress = (item) => {
+    setCategory(item)
+    onCategoryClosePress()
+  }
+
+  const onRelativeDaysClosePress = () => {
+    setRelativeDaysModalVisible(false);
+  }
+  const onCategoryClosePress = () => {
+    setCategoryModalVisible(false);
+  }
+
+  const onClose = () => {
+    navigation.navigate('Main')
+  }
 
   return (
     <View style={styles.container}>
-      <BalanceLabel currentBalance={currentBalance}/>
-      <View>
-        <Picker>
-          <Picker.Item label="Todas Categorias" />
-        </Picker>
-        <Picker>
-          <Picker.Item label="Últimos 7 dias" />
-        </Picker>
+      <BalanceLabel />
+
+      <View style={styles.filtersContainer}>
+        <TouchableOpacity
+          style={styles.filterButton} onPress={() => { setRelativeDaysModalVisible(true) }}>
+          <Text style={styles.filterButtonText}>Últimos 7 dias</Text>
+          <Icon name="keyboard-arrow-down" size={20} color={Colors.champagneDark} />
+        </TouchableOpacity>
+
+        <RelativeDaysModal
+          isVisible={relativeDaysModalVisible}
+          onConfirm={onRelativeDaysPress}
+          onCancel={onRelativeDaysClosePress}
+        />
+
+        <TouchableOpacity
+          style={styles.filterButton} onPress={() => { setCategoryModalVisible(true) }}>
+            <Text style={styles.filterButtonText}>{category.name}</Text>
+            <Icon name="keyboard-arrow-down" size={20} color={Colors.champagneDark} />
+        </TouchableOpacity>
+        <CategoryModal
+          categoryType="all"
+          isVisible={categoryModalVisible}
+          onConfirm={onCategoryPress}
+          onCancel={onCategoryClosePress}/>
       </View>
-      <EntrySummary entriesGrouped={entriesGrouped} />
-      <EntryList entries={entries} />
-      <View>
-        <Button title="Salvar" />
-        <Button title="Fechar" />
-      </View>
+
+      <ScrollView>
+        <EntrySummary />
+        <EntryList days={relativeDays} category={category} />
+      </ScrollView>
+
+      <ActionFooter>
+        <ActionPrimaryButton title='FECHAR' onPress={onClose} />
+      </ActionFooter>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: Colors.background
+  },
+  filtersContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginVertical: 5
+  },
+  filterButton: {
+    flexDirection: 'row',
+    borderColor: Colors.champagneDark,
+    borderWidth: 1,
+    borderRadius: 150,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    marginHorizontal: 5
+  },
+  filterButtonText: {
+    color: Colors.champagneDark
   }
 })
 
-export default Report;
+export default Report

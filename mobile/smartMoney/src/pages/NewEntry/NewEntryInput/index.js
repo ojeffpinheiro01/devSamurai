@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
+import React, { useState } from 'react'
+import { Text, TouchableOpacity, View, StyleSheet } from 'react-native'
 import { TextInputMask } from 'react-native-masked-text'
 
 import Colors from '../../../styles/colors'
 
 const NewEntryInput = ({value, onChangeDebit, onChangeValue}) => {
-  const [debit, setDebit] = useState((value <= 0) ? -1 : 1);
-  const [debitPrefix, setDebitPrefix] = useState(value <= 0 ? '-' : '');
+  const [debit, setDebit] = useState((value <= 0) ? -1 : 1)
+  const [debitPrefix, setDebitPrefix] = useState(value <= 0 ? '-' : '')
 
   const onChangeDebitCredit = () => {
     if (debit < 0) {
@@ -37,7 +37,7 @@ const NewEntryInput = ({value, onChangeDebit, onChangeValue}) => {
           separator: ',',
           delimiter: '.',
           unit: '',
-          suffixUnit: '',
+          suffixUnit: ''
         }}
         value={value}
         includeRawValueInChangeText={true}
@@ -45,8 +45,8 @@ const NewEntryInput = ({value, onChangeDebit, onChangeValue}) => {
           onChangeValue(rawValue * debit)
         }}/>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -54,21 +54,21 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.asphalt,
     borderRadius: 15,
     marginHorizontal: 20,
-    marginVertical: 10,
+    marginVertical: 10
   },
   debitButton: {
     flexDirection: 'row',
     paddingVertical: 20,
-    paddingHorizontal: 20,
+    paddingHorizontal: 20
   },
   debitButtonPrefix: {
     fontSize: 28,
     color: Colors.white,
-    minWidth: 8,
+    minWidth: 8
   },
   debitButtonText: {
     fontSize: 28,
-    color: Colors.white,
+    color: Colors.white
   },
   input: {
     flex: 1,
@@ -76,8 +76,8 @@ const styles = StyleSheet.create({
     color: Colors.white,
     textAlign: 'right',
     paddingLeft: 0,
-    paddingRight: 20,
+    paddingRight: 20
   }
-});
+})
 
-export default NewEntryInput;
+export default NewEntryInput

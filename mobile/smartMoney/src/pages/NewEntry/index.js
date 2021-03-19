@@ -40,7 +40,6 @@ const NewEntry = ({ navigation }) => {
       entryAt: entryAt
     }
     saveEntry(value, currentEntry)
-    console.log('NewEntry :: save', amount)
     onClose()
   }
 
@@ -50,8 +49,8 @@ const NewEntry = ({ navigation }) => {
   }
 
   const onClose = () => {
-    navigation.goBack();
-  };
+    navigation.goBack()
+  }
 
   return (
     <View style={styles.container}>
@@ -79,8 +78,8 @@ const NewEntry = ({ navigation }) => {
         </ActionFooter>
       </View>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
