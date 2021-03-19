@@ -1,24 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { View, Text, Modal, FlatList, TouchableOpacity, StyleSheet } from 'react-native'
 
 import ActionFooter, { ActionPrimaryButton } from '../../components/Core/ActionFooter'
-import { getAllCategories, getDebitCategories, getCreditCategories } from '../../services/Categories'
+import useCategories from '../../hooks/useCategories'
 
 import Colors from '../../styles/colors'
 
 const CategoryModal = ({categoryType, isVisible, onConfirm, onCancel}) => {
-    const [debitCategories, setDebitCategories] = useState([])
-    const [creditCategories, setCreditCategories] = useState([])
-    const [allCategories, setAllCategories] = useState([])
-
-    useEffect(() => {
-        async function loadCategories() {
-            setDebitCategories(await getDebitCategories())
-            setCreditCategories(await getCreditCategories())
-            setAllCategories(await getAllCategories())
-        }
-        loadCategories()
-    }, [])
+    const [allCategories, debitCategories, creditCategories] = useCategories()
 
     return (
         <View>
