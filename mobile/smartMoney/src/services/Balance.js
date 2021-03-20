@@ -41,7 +41,5 @@ export const getBalanceSumByDate = async (days) => {
         amount
       );
     })
-
-  console.log('getBalanceSumByDate :: data:' + JSON.stringify((entries)))
   return entries
 }
