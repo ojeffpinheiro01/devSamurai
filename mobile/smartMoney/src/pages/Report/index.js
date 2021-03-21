@@ -15,7 +15,7 @@ import Colors from '../../styles/colors'
 const Report = ({ navigation }) => {
   const [relativeDaysModalVisible, setRelativeDaysModalVisible] = useState(false)
   const [categoryModalVisible, setCategoryModalVisible] = useState(false)
-  const [relativeDays, setRelativeDays] = useState(7);
+  const [relativeDays, setRelativeDays] = useState(7)
   const [category, setCategory] = useState({ id: null, name: 'Todas Categorias' })
   
   const onRelativeDaysPress = (item) => {
@@ -29,10 +29,10 @@ const Report = ({ navigation }) => {
   }
 
   const onRelativeDaysClosePress = () => {
-    setRelativeDaysModalVisible(false);
+    setRelativeDaysModalVisible(false)
   }
   const onCategoryClosePress = () => {
-    setCategoryModalVisible(false);
+    setCategoryModalVisible(false)
   }
 
   const onClose = () => {

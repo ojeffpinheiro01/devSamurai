@@ -15,6 +15,6 @@ const useBalance = () => {
     }, [])
 
     return [balance]
-};
+}
 
 export default useBalance

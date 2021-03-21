@@ -14,6 +14,6 @@ const useBalanceSumByDate = (days = 7) => {
   }, [days])
 
   return [balanceSum]
-};
+}
 
 export default useBalanceSumByDate
