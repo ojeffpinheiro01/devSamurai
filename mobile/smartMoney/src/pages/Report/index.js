@@ -46,7 +46,7 @@ const Report = ({ navigation }) => {
       <View style={styles.filtersContainer}>
         <TouchableOpacity
           style={styles.filterButton} onPress={() => { setRelativeDaysModalVisible(true) }}>
-          <Text style={styles.filterButtonText}>Últimos 7 dias</Text>
+          <Text style={styles.filterButtonText}>{`Últimos ${relativeDays} dias`}</Text>
           <Icon name="keyboard-arrow-down" size={20} color={Colors.champagneDark} />
         </TouchableOpacity>
 
@@ -69,7 +69,7 @@ const Report = ({ navigation }) => {
       </View>
 
       <ScrollView>
-        <EntrySummary />
+        <EntrySummary days={relativeDays} />
         <EntryList days={relativeDays} category={category} />
       </ScrollView>
 
