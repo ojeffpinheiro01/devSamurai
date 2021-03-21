@@ -74,6 +74,5 @@ export const getBalanceSumByCategory = async (days, showOthers = true) => {
     entries = [...data1, ...data2]
   }
   
-  console.log('getBalanceSumByCategory :: ', JSON.stringify(entries))
   return entries
 }

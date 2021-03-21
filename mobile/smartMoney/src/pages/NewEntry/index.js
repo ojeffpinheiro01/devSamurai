@@ -8,6 +8,7 @@ import NewEntryInput from './NewEntryInput'
 import NewEntryCategoryPicker from './NewEntryCategoryPicker'
 import NewEntryDatePicker from './NewEntryDatePicker'
 import NewEntryDeleteAction from './NewEntryDeleteAction'
+import NewEntryAddressPicker from './NewEntryAddressPicker'
 
 import Colors from '../../styles/colors'
 
@@ -67,6 +68,7 @@ const NewEntry = ({ navigation }) => {
         <View style={styles.formActionContainer}>
           <NewEntryDatePicker
             value={entryAt} onChange={setEntryAt} />
+          <NewEntryAddressPicker />
           <NewEntryDeleteAction entry={currentEntry} onOkPress={onDel} />
         </View>
 
