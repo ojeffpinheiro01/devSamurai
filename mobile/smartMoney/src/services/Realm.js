@@ -30,8 +30,6 @@ export const initDB = (realm) => {
     } catch (err) {
       console.log('initDB :: erro: ' + JSON.stringify(err))
     }
-  } else {
-    console.log('initDB :: categorias já existem... saindo')
   }
 }
 

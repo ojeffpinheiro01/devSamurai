@@ -15,7 +15,7 @@ export const getEntries = async (days, category) => {
   }
 
   if(category && category.id) {
-    realm = realm.filtered('category === $0', category)
+    realm = realm.filtered('category == $0', category)
   }
   
   const entries = realm.sorted('entryAt', true)
