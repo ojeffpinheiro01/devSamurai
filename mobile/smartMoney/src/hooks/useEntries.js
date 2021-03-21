@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
-import { getEntries, saveEntry, delEntry } from '../services/Entries';
+import { getEntries, saveEntry, delEntry } from '../services/Entries'
 
 const useEntries = (days = 7, category) => {
   const [entries, setEntries] = useState()
@@ -14,6 +14,6 @@ const useEntries = (days = 7, category) => {
   }, [days, category])
 
   return [entries, saveEntry, delEntry]
-};
+}
 
 export default useEntries

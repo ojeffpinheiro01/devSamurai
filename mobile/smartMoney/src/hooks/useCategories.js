@@ -15,8 +15,8 @@ const useCategories = () => {
 
     useEffect(() => {
         const loadAllCategories = async () => {
-            const data = await getAllCategories();
-            setAllCategories(data);
+            const data = await getAllCategories()
+            setAllCategories(data)
         }
 
         const loadDebitCategories = async () => {
@@ -40,6 +40,6 @@ const useCategories = () => {
         loadInitCategory()
     }, [])
     return [allCategories, debitCategories, creditCategories, initCategory]
-};
+}
 
 export default useCategories

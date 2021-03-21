@@ -6,7 +6,6 @@ import useBalanceSumByDate from '../../../hooks/useBalanceSumByDate'
 
 const BalancePanelChart = () => {
     const [balanceSum] = useBalanceSumByDate()
-    const data = [100, 80, -30, 120, 10, 35, 70]
     
     return (
         <View style={styles.container}>
