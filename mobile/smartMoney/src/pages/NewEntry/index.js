@@ -7,8 +7,9 @@ import BalanceLabel from '../../components/BalanceLabel'
 import NewEntryInput from './NewEntryInput'
 import NewEntryCategoryPicker from './NewEntryCategoryPicker'
 import NewEntryDatePicker from './NewEntryDatePicker'
-import NewEntryDeleteAction from './NewEntryDeleteAction'
 import NewEntryAddressPicker from './NewEntryAddressPicker'
+import NewEntryCameraPicker from './NewEntryCameraPicker'
+import NewEntryDeleteAction from './NewEntryDeleteAction'
 
 import Colors from '../../styles/colors'
 
@@ -77,6 +78,7 @@ const NewEntry = ({ navigation }) => {
         <View style={styles.formActionContainer}>
           <NewEntryDatePicker
             value={entryAt} onChange={setEntryAt} />
+          <NewEntryCameraPicker />
           <NewEntryAddressPicker 
             address={address} 
             onChange={({latitude, longitude, address}) => {
@@ -84,7 +86,8 @@ const NewEntry = ({ navigation }) => {
               setLongitude(longitude)
               setAddress(address)
             }} />
-          <NewEntryDeleteAction entry={currentEntry} onOkPress={onDel} />
+          <NewEntryDeleteAction 
+            entry={currentEntry} onOkPress={onDel} />
         </View>
 
       </View>
