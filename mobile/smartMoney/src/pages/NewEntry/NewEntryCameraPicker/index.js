@@ -35,7 +35,7 @@ const NewEntryCameraPicker = ({photo, onChangePhoto}) => {
         photo={photo}
         isVisible={isModalVisible}
         onChangePhoto={onChangePhotoPress}
-        onDelete={onDeletePhotoPress}
+        onDelPhoto={onDeletePhotoPress}
         onClose={onClosePress} />
     </View>
   )
