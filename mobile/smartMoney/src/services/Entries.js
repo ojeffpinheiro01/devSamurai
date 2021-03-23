@@ -18,7 +18,7 @@ export const getEntries = async (days, category) => {
   if(category && category.id) {
     realm = realm.filtered('category == $0', category);
   }
-  
+
   const entries = realm.sorted('entryAt', true)
   return entries
   } catch (err) {
@@ -34,14 +34,14 @@ export const saveEntry = async (value, entry = {}) => {
     realm.write(() => {
       data = {
         id: value.id || entry.id || getUUID(),
-        amount: value.amount || entry.amount,
-        entryAt: value.entryAt || entry.entryAt,
+        amount: value.amount || entry.amount || 0,
+        entryAt: value.entryAt || entry.entryAt || new Date(),
         description: value.category.name,
-        photo: value.photo,
+        photo: value.photo || entry.photo,
         address: value.address || entry.address,
         latitude: value.latitude || entry.latitude,
         longitude: value.longitude || entry.longitude,
-        isInit: false,
+        isInit: value.isInit || false,
         category: value.category || entry.category,
       }
       realm.create('Entry', data, true)

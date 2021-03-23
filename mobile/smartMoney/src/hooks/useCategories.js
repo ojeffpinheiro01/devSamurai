@@ -1,24 +1,19 @@
 import { useEffect, useState } from 'react'
 
 import {
-    getAllCategories,
-    getDebitCategories,
-    getCreditCategories,
-    getInitCategories,
+  getDebitCategories,
+  getCreditCategories,
+  getAllCategories,
+  getInitCategories,
 } from '../services/Categories'
 
 const useCategories = () => {
-    const [allCategories, setAllCategories] = useState()
     const [debitCategories, setDebitCategories] = useState()
     const [creditCategories, setCreditCategories] = useState()
-    const [initCategory, setInitCategory] = useState()
+    const [allCategories, setAllCategories] = useState()
+    const [initCategories, setInitCategories] = useState()
 
-    useEffect(() => {
-        const loadAllCategories = async () => {
-            const data = await getAllCategories()
-            setAllCategories(data)
-        }
-
+  useEffect(() => {
         const loadDebitCategories = async () => {
             const data = await getDebitCategories()
             setDebitCategories(data)
@@ -28,10 +23,14 @@ const useCategories = () => {
             const data = await getCreditCategories()
             setCreditCategories(data)
         }
+        const loadAllCategories = async () => {
+            const data = await getAllCategories()
+            setAllCategories(data)
+        }
 
         const loadInitCategory = async () => {
             const data = await getInitCategories()
-            setInitCategory(data)
+            setInitCategories(data['0'])
         }
 
         loadDebitCategories()
@@ -39,7 +38,7 @@ const useCategories = () => {
         loadAllCategories()
         loadInitCategory()
     }, [])
-    return [allCategories, debitCategories, creditCategories, initCategory]
+    return [debitCategories, creditCategories, allCategories, initCategories]
 }
 
 export default useCategories

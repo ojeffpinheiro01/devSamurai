@@ -1,17 +1,28 @@
 import React, { useState } from 'react'
-import { Image, StyleSheet, View } from 'react-native'
+import { View, Image, StyleSheet } from 'react-native'
 
 import ActionFooter, { ActionPrimaryButton } from '../../components/Core/ActionFooter' 
 import OnboardingMessage from './OnboardingMessage'
 import OnboardingBalanceInput from './OnboardingBalanceInput'
+
+import useCategories from '../../hooks/useCategories';
+import { saveEntry } from '../../services/Entries'
 
 import logo from '../../assets/logo-white.png'
 
 import Colors from '../../styles/colors'
 
 const Onboarding = ({ navigation }) => {
+  const [, , , initCategories] = useCategories()
   const [amount, setAmount] = useState(0)
-  const onSavePress = () => {}
+  const onSavePress = () => {
+    saveEntry({
+      amount: parseFloat(amount),
+      isInit: true,
+      category: initCategories
+    })
+    navigation.navigate('Main')
+  }
 
   return (
     <View style={styles.container}>
