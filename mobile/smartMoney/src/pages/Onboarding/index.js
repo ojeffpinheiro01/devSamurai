@@ -5,8 +5,9 @@ import ActionFooter, { ActionPrimaryButton } from '../../components/Core/ActionF
 import OnboardingMessage from './OnboardingMessage'
 import OnboardingBalanceInput from './OnboardingBalanceInput'
 
-import useCategories from '../../hooks/useCategories';
+import useCategories from '../../hooks/useCategories'
 import { saveEntry } from '../../services/Entries'
+import { setInitialized } from '../../services/Onboarding'
 
 import logo from '../../assets/logo-white.png'
 
@@ -21,6 +22,7 @@ const Onboarding = ({ navigation }) => {
       isInit: true,
       category: initCategories
     })
+    setInitialized()
     navigation.navigate('Main')
   }
 
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
   logo: {
     alignItems: 'center',
     marginTop: 20,
-  },
-});
+  }
+})
 
-export default Onboarding;
+export default Onboarding

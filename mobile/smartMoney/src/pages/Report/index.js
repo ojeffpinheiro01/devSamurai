@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, TouchableOpacity, Text, ScrollView,  StyleSheet } from 'react-native'
+import { View, TouchableOpacity, Text, ScrollView,  StyleSheet, StatusBar } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 
@@ -41,6 +41,8 @@ const Report = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar
+        barStyle="light-content" backgroundColor={Colors.background} />
       <BalanceLabel />
 
       <View style={styles.filtersContainer}>

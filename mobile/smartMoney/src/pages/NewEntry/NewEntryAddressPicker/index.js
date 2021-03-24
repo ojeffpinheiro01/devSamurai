@@ -100,6 +100,6 @@ const styles = StyleSheet.create({
     buttonActivated: {
         backgroundColor: Colors.blue,
     }
-});
+})
 
-export default NewEntryAddressPicker;
+export default NewEntryAddressPicker

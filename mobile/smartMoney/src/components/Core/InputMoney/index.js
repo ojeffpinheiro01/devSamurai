@@ -7,20 +7,20 @@ import Colors from '../../../styles/colors'
 const InputMoney = ({ value, startWithDebit = true, onChangeDebit, onChangeValue }) => {
   const setDefaultDebit = () => {
     if (value === 0) {
-      return startWithDebit ? -1 : 1;
+      return startWithDebit ? -1 : 1
     } else {
-      return value <= 0 ? -1 : 1;
+      return value <= 0 ? -1 : 1
     }
-  };
+  }
 
   const setDefaultDebitPrefix = () => {
     if (value === 0) {
-      return startWithDebit ? '-' : '';
+      return startWithDebit ? '-' : ''
     } else {
-      return value <= 0 ? '-' : '';
+      return value <= 0 ? '-' : ''
     }
   }
-  const [debit, setDebit] = useState(setDefaultDebit());
+  const [debit, setDebit] = useState(setDefaultDebit())
   const [debitPrefix, setDebitPrefix] = useState(setDefaultDebitPrefix())
 
   const onChangeDebitCredit = () => {
