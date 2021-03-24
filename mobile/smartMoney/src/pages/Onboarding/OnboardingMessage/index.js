@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
 import Colors from '../../../styles/colors'
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
     },
   })
 
-export default OnboardingMessage;
+export default OnboardingMessage
