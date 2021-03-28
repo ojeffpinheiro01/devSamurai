@@ -7,55 +7,60 @@ import BalanceLabel from '../../components/BalanceLabel'
 import NewEntryInput from './NewEntryInput'
 import NewEntryCategoryPicker from './NewEntryCategoryPicker'
 import NewEntryDatePicker from './NewEntryDatePicker'
-import NewEntryAddressPicker from './NewEntryAddressPicker'
 import NewEntryCameraPicker from './NewEntryCameraPicker'
+import NewEntryAddressPicker from './NewEntryAddressPicker'
 import NewEntryDeleteAction from './NewEntryDeleteAction'
-
-import Colors from '../../styles/colors'
 
 import useEntries from '../../hooks/useEntries'
 
-const NewEntry = ({ navigation }) => {
-  const currentEntry = navigation.getParam('entry', {
-    id: null,
-    amount: 0,
-    category: { id: null, name: 'Selecione' },
-    photo: null,
-    address: null,
-    latitude: null,
-    longitude: null,
-    entryAt: new Date()
-  })
+import Colors from '../../styles/colors'
+
+const NewEntry = ({ route, navigation }) => {
+  const currentEntry = route.params?.entry
+    ? route.params.entry
+    : {
+        id: null,
+        amount: 0,
+        // entryAt: new Date(),
+        photo: null,
+        address: null,
+        latitude: null,
+        longitude: null,
+        category: {id: null, name: 'Selecione'},
+      };
 
   const [_, saveEntry, delEntry] = useEntries()
 
   const [debit, setDebit] = useState(currentEntry.amount <= 0)
   const [amount, setAmount] = useState(currentEntry.amount)
   const [category, setCategory] = useState(currentEntry.category)
-  const [entryAt, setEntryAt] = useState(currentEntry.entryAt)
+  const [entryAt, setEntryAt] = useState(
+    currentEntry.entryAt ? new Date(currentEntry.entryAt) : new Date(),
+  )
   const [photo, setPhoto] = useState(currentEntry.photo)
   const [address, setAddress] = useState(currentEntry.address)
   const [latitude, setLatitude] = useState(currentEntry.latitude)
   const [longitude, setLongitude] = useState(currentEntry.longitude)
 
   const isValid = () => {
-    if (parseFloat(amount) !== '0') {
+    if (parseFloat(amount) !== 0) {
       return true
     }
     return false
   }
 
   const onSave = () => {
-    const value = {
+    const data = {
+      id: currentEntry.id,
       amount: parseFloat(amount),
-      category: category,
-      entryAt: entryAt,
       photo: photo,
+      category: category,
       address: address,
       latitude: latitude,
-      longitude: longitude
+      longitude: longitude,
+      entryAt: entryAt,
     }
-    saveEntry(value, currentEntry)
+    saveEntry(data)
     onClose()
   }
 
@@ -76,7 +81,7 @@ const NewEntry = ({ navigation }) => {
 
       <View style={styles.formContainer}>
         <NewEntryInput
-          value={amount} onChangeValue={setAmount} onChangeDebit={setDebit} />
+          value={amount} onChangeDebit={setDebit} onChangeValue={setAmount} />
         <NewEntryCategoryPicker
           debit={debit} category={category} onChangeCategory={setCategory} />
 
@@ -100,7 +105,8 @@ const NewEntry = ({ navigation }) => {
       <View>
         <ActionFooter>
           <ActionPrimaryButton 
-            title={currentEntry.id ? 'Atualizar' : 'Salvar'} onPress={() => { isValid() && onSave() }} />
+            title={currentEntry.id ? 'Atualizar' : 'Salvar'} 
+            onPress={() => { isValid() && onSave() }} />
           <ActionSecondaryButton 
             title='Cancelar' onPress={onClose} />
         </ActionFooter>

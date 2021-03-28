@@ -15,9 +15,10 @@ const Main = ({ navigation }) => {
         <EntrySummary
           onPressActionButton={() => navigation.navigate('Report')} />
         <EntryList
-          onEntryPress={(entry) => navigation.navigate('NewEntry', {
-            entry: entry
-          })}
+          onEntryPress={(entry) => {
+            const entryToJson = JSON.parse(JSON.stringify(entry))
+            navigation.navigate('NewEntry', { entry: entryToJson })
+          }}
           onPressActionButton={() => navigation.navigate('Report')} />
       </ScrollView>
     </View>

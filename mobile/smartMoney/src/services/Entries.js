@@ -10,39 +10,42 @@ export const getEntries = async (days, category) => {
   try {
     realm = realm.objects('Entry')
 
-  if (days > 0) {
-    const date = moment().subtract(days, 'days').toDate()
-    realm = realm.filtered('entryAt >= $0', date)
-  }
+    if (days > 0) {
+      const date = moment().subtract(days, 'days').toDate()
+      realm = realm.filtered('entryAt >= $0', date)
+    }
 
-  if(category && category.id) {
-    realm = realm.filtered('category == $0', category)
-  }
+    if (category && category.id) {
+      realm = realm.filtered('category == $0', category)
+    }
 
-  const entries = realm.sorted('entryAt', true)
-  return entries
+    const entries = realm.sorted('entryAt', true)
+    return entries
   } catch (err) {
     console.log(err.message)
   }
 }
 
-export const saveEntry = async (value, entry = {}) => {
+export const saveEntry = async (entry) => {
   const realm = await getRealm()
   let data = {}
 
   try {
+    const category = realm
+      .objects('Category')
+      .filtered('id == $0', entry.category.id)[0]
     realm.write(() => {
       data = {
-        id: value.id || entry.id || getUUID(),
-        amount: value.amount || entry.amount || 0,
-        entryAt: value.entryAt || entry.entryAt || new Date(),
-        description: value.category.name,
-        photo: value.photo || entry.photo,
-        address: value.address || entry.address,
-        latitude: value.latitude || entry.latitude,
-        longitude: value.longitude || entry.longitude,
-        isInit: value.isInit || false,
-        category: value.category || entry.category,
+        id: entry.id || getUUID(),
+        amount: entry.amount || 0,
+        entryAt: entry.entryAt,
+        description: entry.category.name,
+        photo: entry.photo,
+        address: entry.address,
+        latitude: entry.latitude,
+        longitude: entry.longitude,
+        isInit: entry.isInit || false,
+        category: category,
       }
       realm.create('Entry', data, true)
     })
@@ -57,9 +60,12 @@ export const saveEntry = async (value, entry = {}) => {
 
 export const delEntry = async (entry) => {
   const realm = await getRealm()
-
   try {
-    realm.write(() => { realm.delete(entry) })
+    const entryRealmObject = realm
+      .objects('Entry').filtered('id == $0', entry.id)[0]
+    realm.write(() => {
+      realm.delete(entryRealmObject)
+    });
   } catch (err) {
     console.log('delEntry :: erro ao deletar ', JSON.stringify(entry))
     console.log('delEntry :: erro ao deletar ', err)
