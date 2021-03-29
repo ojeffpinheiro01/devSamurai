@@ -50,7 +50,7 @@ const EntryListItem = ({ entry, isFirstItem, isLastItem, onEntryPress }) => {
 
             {entry.address && (
               <>
-                <Icon style={styles.addressIcon} name="person-pin" size={12} />
+                <Icon style={styles.addressIcon} name="location-on" size={12} />
                 <Text style={styles.addressText}>{entry.address}</Text>
               </>
             )}

@@ -1,4 +1,5 @@
 import { Alert } from 'react-native'
+import firestore from '@react-native-firebase/firestore';
 
 import moment from '../vendors/moment'
 
@@ -26,33 +27,26 @@ export const getEntries = async (days, category) => {
   }
 }
 
-export const saveEntry = async (entry) => {
-  const realm = await getRealm()
+export const addEntry = async (entry) => {
   let data = {}
 
   try {
-    const category = realm
-      .objects('Category')
-      .filtered('id == $0', entry.category.id)[0]
-    realm.write(() => {
-      data = {
-        id: entry.id || getUUID(),
-        amount: entry.amount || 0,
-        entryAt: entry.entryAt,
-        description: entry.category.name,
-        photo: entry.photo,
-        address: entry.address,
-        latitude: entry.latitude,
-        longitude: entry.longitude,
-        isInit: entry.isInit || false,
-        category: category,
-      }
-      realm.create('Entry', data, true)
-    })
+    data = {
+      amount: entry.amount,
+      entryAt: entry.entryAt || new Date(),
+      description: entry.category.name,
+      photo: entry.photo,
+      address: entry.address,
+      latitude: entry.latitude,
+      longitude: entry.longitude,
+      isInit: entry.isInit || false,
+      category: entry.category
+    }
+
+    await firestore().collection('entries').add(data)
   } catch (err) {
-    console.log('saveEntry :: erro ao salvar ' + JSON.stringify(data))
     console.log(err.message)
-    Alert.alert('Oops', 'Erro ao salvar')
+    Alert.alert('Oops', 'Houve um erro ao salvar os dados de lançamento.')
   }
 
   return data

@@ -26,8 +26,8 @@ const NewEntry = ({ route, navigation }) => {
         address: null,
         latitude: null,
         longitude: null,
-        category: {id: null, name: 'Selecione'},
-      };
+        category: {id: null, name: 'Selecione'}
+      }
 
   const [_, saveEntry, delEntry] = useEntries()
 
@@ -58,7 +58,7 @@ const NewEntry = ({ route, navigation }) => {
       address: address,
       latitude: latitude,
       longitude: longitude,
-      entryAt: entryAt,
+      entryAt: entryAt
     }
     saveEntry(data)
     onClose()

@@ -1,3 +1,5 @@
+import firestore from '@react-native-firebase/firestore';
+
 import { getUUID } from './uuid'
 import { getRealm } from './Realm'
 
@@ -138,9 +140,10 @@ export const getCreditCategories = async () => {
 }
 
 export const getInitCategories = async () => {
-  const realm = await getRealm()
-  return realm
-    .objects('Category')
-    .filtered('isInit = true')
-    .sorted('order')
+  const querySnapshot = await firestore()
+    .collection('categories')
+    .where('isInit', '==', true)
+    .get()
+
+  return { ...querySnapshot.docs[0].data(), id: querySnapshot.docs[0].id }
 }
