@@ -46,7 +46,9 @@ const EntryListItem = ({ entry, isFirstItem, isLastItem, onEntryPress }) => {
           <Text style={styles.descriptionText} >{entry.description}</Text>
           <View style={styles.details}>
             <Icon style={styles.entryAtIcon} name="access-time" size={12} />
-            <Text style={styles.entryAtText}>{moment(entry.entryAt).calendar()}</Text>
+            <Text style={styles.entryAtText}>
+              {moment(entry.entryAt).calendar()}
+            </Text>
 
             {entry.address && (
               <>
