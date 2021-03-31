@@ -11,7 +11,7 @@ const useBalanceSumByCategory = (days = 7) => {
       const loadBalanceSumByCategory = async () => {
         const data = await getBalanceSumByCategory(days)
         setBalanceSum([...data])
-      };
+      }
       loadBalanceSumByCategory()
     }, [days])
   )

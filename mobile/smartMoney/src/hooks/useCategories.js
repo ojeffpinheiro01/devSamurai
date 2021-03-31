@@ -32,13 +32,13 @@ const useCategories = () => {
             const data = await getInitCategories()
             setInitCategories(data)
         }
-
+        
+        loadAllCategories()
         loadDebitCategories()
         loadCreditCategories()
-        loadAllCategories()
         loadInitCategory()
     }, [])
-    return [debitCategories, creditCategories, allCategories, initCategories]
+    return [allCategories, debitCategories, creditCategories, initCategories]
 }
 
 export default useCategories

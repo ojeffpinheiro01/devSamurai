@@ -11,7 +11,7 @@ const Preloading = ({navigation}) => {
         async function makeRedirect() {
             (await isInitialized())
               ? navigation.navigate('Main')
-              : navigation.navigate('Onboarding');
+              : navigation.navigate('Onboarding')
           }
         makeRedirect()
     }, [])
@@ -39,6 +39,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 40,
     }
-});
+})
 
 export default Preloading

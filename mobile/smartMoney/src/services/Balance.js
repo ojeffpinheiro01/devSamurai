@@ -1,34 +1,49 @@
 import _ from 'lodash'
+import firestore from '@react-native-firebase/firestore'
 import moment from '../vendors/moment'
 
-import { getRealm } from './Realm'
 import { getUUID } from './uuid'
 
 import Colors from '../styles/colors'
 
 export const getBalance = async (untilDays = 0) => {
-  const realm = await getRealm()
-  let entries = realm.objects('Entry')
+  let querySnapshot
 
   if (untilDays > 0) {
     const date = moment().subtract(untilDays, 'days').toDate()
-    entries = entries.filtered('entryAt < $0', date)
+    querySnapshot = await firestore()
+      .collection('entries')
+      .orderBy('entryAt')
+      .endBefore(date)
+      .get()
+  } else {
+    querySnapshot = await firestore().collection('entries').get()
   }
 
-  return entries.sum('amount')
+  return _(querySnapshot.docs).reduce((total, doc) => {
+    return total + doc.data().amount
+  }, 0)
 }
 
 export const getBalanceSumByDate = async (days) => {
-  const realm = await getRealm()
-  const startBalance = await getBalance()
-  let entries = realm.objects('Entry')
+  let querySnapshot
+  const startBalance = (await getBalance(days)) || 0
 
   if (days > 0) {
     const date = moment().subtract(days, 'days').toDate()
-    entries = entries.filtered('entryAt >= $0', date)
+    querySnapshot = await firestore()
+      .collection('entries')
+      .orderBy('entryAt')
+      .startAt(date)
+      .get()
+  } else {
+    querySnapshot = await firestore()
+      .collection('entries')
+      .orderBy('entryAt')
+      .get()
   }
 
-  entries = entries.sorted('entryAt')
+  let entries = querySnapshot.docs.map((documentSnapshot) => documentSnapshot.data())
 
   entries = _(entries)
     .groupBy(({entryAt}) => moment(entryAt).format('YYYYMMDD'))
@@ -44,36 +59,48 @@ export const getBalanceSumByDate = async (days) => {
 }
 
 export const getBalanceSumByCategory = async (days, showOthers = true) => {
-  const realm = await getRealm()
-  let entries = realm.objects('Entry')
+  let querySnapshot
 
   if (days > 0) {
     const date = moment().subtract(days, 'days').toDate()
-    entries = entries.filtered('entryAt >= $0', date)
+    querySnapshot = await firestore()
+      .collection('entries')
+      .orderBy('entryAt')
+      .startAt(date)
+      .get()
+  } else {
+    querySnapshot = await firestore()
+      .collection('entries')
+      .orderBy('entryAt')
+      .get()
   }
 
+  let entries = querySnapshot.docs.map((documentSnapshot) =>
+    documentSnapshot.data()
+  )
+
   entries = _(entries)
-    .groupBy(({category: {id}}) => id)
+    .groupBy(({ category: { id } }) => id)
     .map((entry) => ({
       category: _.omit(entry[0].category, 'entries'),
       amount: Math.abs(_.sumBy(entry, 'amount'))
     }))
-    .filter(({amount}) => amount > 0)
+    .filter(({ amount }) => amount > 0)
     .orderBy('amount', 'desc')
 
   const othersLimit = 3
-  
-  if(showOthers && _(entries).size() > othersLimit){
+
+  if (showOthers && _(entries).size() > othersLimit) {
     const data1 = _(entries).slice(0, othersLimit)
     const data2 = [{
-        category: {id: getUUID(), name: 'Outros', color: Colors.metal},
-        amount: _(entries)
-          .slice(othersLimit)
-          .map(({amount}) => amount)
-          .sum()
-      }]
+      category: { id: getUUID(), name: 'Outros', color: Colors.metal },
+      amount: _(entries)
+        .slice(othersLimit)
+        .map(({ amount }) => amount)
+        .sum()
+    }]
     entries = [...data1, ...data2]
   }
-  
+
   return entries
 }

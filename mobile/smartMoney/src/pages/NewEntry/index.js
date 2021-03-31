@@ -29,13 +29,15 @@ const NewEntry = ({ route, navigation }) => {
         category: {id: null, name: 'Selecione'}
       }
 
-  const [_, saveEntry, delEntry] = useEntries()
+  const [_, addEntry, updateEntry, delEntry] = useEntries()
+
+  const isEdit = route.params?.isEdit ? route.params.isEdit : false
 
   const [debit, setDebit] = useState(currentEntry.amount <= 0)
   const [amount, setAmount] = useState(currentEntry.amount)
   const [category, setCategory] = useState(currentEntry.category)
   const [entryAt, setEntryAt] = useState(
-    currentEntry.entryAt ? new Date(currentEntry.entryAt) : new Date(),
+    currentEntry.entryAt ? new Date(currentEntry.entryAt) : new Date()
   )
   const [photo, setPhoto] = useState(currentEntry.photo)
   const [address, setAddress] = useState(currentEntry.address)
@@ -60,7 +62,7 @@ const NewEntry = ({ route, navigation }) => {
       longitude: longitude,
       entryAt: entryAt
     }
-    saveEntry(data)
+    isEdit ? updateEntry(data) : addEntry(data)
     onClose()
   }
 
@@ -104,7 +106,7 @@ const NewEntry = ({ route, navigation }) => {
       </View>
       <View>
         <ActionFooter>
-          <ActionPrimaryButton 
+          <ActionPrimaryButton
             title={currentEntry.id ? 'Atualizar' : 'Salvar'} 
             onPress={() => { isValid() && onSave() }} />
           <ActionSecondaryButton 
