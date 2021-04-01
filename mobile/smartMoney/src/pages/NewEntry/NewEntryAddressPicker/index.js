@@ -33,14 +33,9 @@ const NewEntryAddressPicker = ({address, onChange}) => {
                     }
                 ])
             })
-            .catch((error) => {
-                console.log(
-                    'NewEntryAddressPicker :: getLocation :: erro ao recuperar a Localização',
-                    error
-                )
-                Alert.alert(
-                    'Houve um Erro ao recuperar sua posição, por favor, tenha certeza que autorizou o aplicativo',
-                )
+            .catch((err) => {
+                console.log('NewEntryAddressPicker :: getLocation :: erro ao recuperar a Localização', err)
+                Alert.alert('Oops', 'Houve um Erro ao recuperar sua posição, por favor, tenha certeza que autorizou o aplicativo')
             })
     } 
 
@@ -52,9 +47,9 @@ const NewEntryAddressPicker = ({address, onChange}) => {
 
                 getLocation(latitude, longitude)
             },
-            (error) => {
-                console.log('NewEntryAddressPicker :: erro:', error)
-                Alert.alert('Houve um Erro ao recuperar sua posição, por favor, tenha certeza que autorizou o aplicativo')
+            (err) => {
+                console.log('NewEntryAddressPicker :: erro:', err)
+                Alert.alert('Oops', 'Houve um Erro ao recuperar sua posição, por favor, tenha certeza que autorizou o aplicativo')
             }
         )
     }

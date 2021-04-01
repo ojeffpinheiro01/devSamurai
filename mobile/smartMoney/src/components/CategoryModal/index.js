@@ -19,8 +19,8 @@ const CategoryModal = ({categoryType, isVisible, onConfirm, onCancel}) => {
                             categoryType === 'all'
                                 ? allCategories
                                 : categoryType === 'debit'
-                                    ? creditCategories 
-                                    : debitCategories
+                                    ? debitCategories  
+                                    : creditCategories
                         }
                         keyExtractor={(item) => item.id}
                         renderItem={({ item }) => (

@@ -1,5 +1,6 @@
+import firestore from '@react-native-firebase/firestore'
+
 import { getUUID } from './uuid'
-import { getRealm } from './Realm'
 
 export const getDefaultCategories = () => {
   return [
@@ -117,30 +118,62 @@ export const getDefaultCategories = () => {
 }
 
 export const getAllCategories = async () => {
-  const realm = await getRealm()
-  return realm.objects('Category').sorted('order')
+  const querySnapshot = await firestore()
+  .collection('categories')
+  .orderBy('order')
+  .get()
+
+const allCategories = querySnapshot.docs.map((documentSnapshot) => {
+  return {
+    ...documentSnapshot.data(),
+    id: documentSnapshot.id
+  }
+})
+
+return allCategories
 }
 
 export const getDebitCategories = async () => {
-  const realm = await getRealm()
-  return realm
-    .objects('Category')
-    .filtered('isDebit = true AND isInit = false')
-    .sorted('order')
+  const querySnapshot = await firestore()
+    .collection('categories')
+    .where('isDebit', '==', true)
+    .where('isInit', '==', false)
+    .orderBy('order')
+    .get()
+
+  const debitCategories = querySnapshot.docs.map((documentSnapshot) => {
+    return {
+      ...documentSnapshot.data(),
+      id: documentSnapshot.id
+    }
+  })
+
+  return debitCategories
 }
 
 export const getCreditCategories = async () => {
-  const realm = await getRealm()
-  return realm
-    .objects('Category')
-    .filtered('isCredit = true AND isInit = false')
-    .sorted('order')
+  const querySnapshot = await firestore()
+    .collection('categories')
+    .where('isCredit', '==', true)
+    .where('isInit', '==', false)
+    .orderBy('order')
+    .get()
+
+  const creditCategories = querySnapshot.docs.map((documentSnapshot) => {
+    return {
+      ...documentSnapshot.data(),
+      id: documentSnapshot.id
+    }
+  })
+
+  return creditCategories
 }
 
 export const getInitCategories = async () => {
-  const realm = await getRealm()
-  return realm
-    .objects('Category')
-    .filtered('isInit = true')
-    .sorted('order')
+  const querySnapshot = await firestore()
+    .collection('categories')
+    .where('isInit', '==', true)
+    .get()
+
+  return { ...querySnapshot.docs[0].data(), id: querySnapshot.docs[0].id }
 }

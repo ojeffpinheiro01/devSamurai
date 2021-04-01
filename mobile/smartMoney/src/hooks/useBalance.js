@@ -11,11 +11,11 @@ const useBalance = () => {
     const loadBalance = navigation.addListener('focus', async () => {
       const value = await getBalance()
       setBalance(value)
-    });
+    })
     return loadBalance
   }, [navigation])
 
   return [balance]
-};
+}
 
 export default useBalance

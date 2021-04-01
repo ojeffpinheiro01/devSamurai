@@ -26,8 +26,7 @@ const EntryList = ({days = 7, category}) => {
             isFirstItem={index === 0}
             isLastItem={index === entries.length - 1}
             onEntryPress={(entry) => {
-              const entryToJson = JSON.parse(JSON.stringify(entry))
-              navigation.navigate('NewEntry', { entry: entryToJson })
+              navigation.navigate('NewEntry', { entry: entry, isEdit: true })
             }}/>
         )}
       />
