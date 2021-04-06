@@ -1,0 +1,17 @@
+.background-banner {
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/banners/banner-home.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.background-banner-search {
+    width: 100%;
+    height: 80vh;
+    background-image: url('../img/banners/banner-resultado.jpeg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}

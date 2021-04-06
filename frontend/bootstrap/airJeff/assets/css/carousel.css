@@ -1,0 +1,20 @@
+@media only screen and (min-width: 768px) {
+    .carousel .carousel-inner .carousel-item .carousel-item-img {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .carousel .carousel-inner .carousel-item .carousel-item-img {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .carousel .carousel-inner .carousel-item .carousel-item-img {
+        width: 400px;
+        height: 400px;
+    }
+}
