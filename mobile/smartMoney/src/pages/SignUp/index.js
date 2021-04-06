@@ -8,15 +8,35 @@ import {
   StyleSheet,
 } from 'react-native'
 
+import { signUp as register } from '../../services/Auth'
+
 import logo from '../../assets/logo-white.png'
 
 import Colors from '../../styles/colors'
 
-const SignUp = ({navigation}) => {
+const SignUp = ({ navigation }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
+
+  const onSubmit = async () => {
+    if (loading === false) {
+      setLoading(true)
+
+      const { registerSuccess } = await register({ name, email, password })
+
+      if (registerSuccess === true) {
+        navigation.reset({
+          index: 0,
+          key: null,
+          routes: [ {name: 'Onboarding' }]
+        })
+      } else {
+        setLoading(false)
+      }
+    }
+  }
 
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
@@ -50,7 +70,7 @@ const SignUp = ({navigation}) => {
         value={password}
         onChangeText={(text) => { setPassword(text) }}
       />
-      <TouchableOpacity onPress={() => {}} style={styles.button}>
+      <TouchableOpacity onPress={onSubmit} style={styles.button}>
         <Text style={styles.buttonText}>
           {loading ? 'Aguarde...' : 'Criar conta'}
         </Text>
@@ -74,7 +94,7 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
     borderColor: Colors.champagne,
-    borderRadius: 2,
+    borderRadius: 8,
     width: '80%',
     paddingHorizontal: 20,
     fontSize: 16,
@@ -88,7 +108,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.red,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 2,
+    borderRadius: 8,
     marginTop: 10
   },
   buttonText: {
@@ -99,7 +119,7 @@ const styles = StyleSheet.create({
   textSignUp: { marginTop: 10 },
   buttonSignUpText: {
     color: Colors.blueDark,
-    textDecorationLine: 'none',
+    textDecorationLine: 'none'
   }
 })
 

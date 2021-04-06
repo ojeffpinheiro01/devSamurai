@@ -11,6 +11,7 @@ import NewEntry from './pages/NewEntry'
 import Report from './pages/Report'
 
 import { isInitialized } from './services/Onboarding'
+import { isLogged } from './services/Auth'
 
 const Stack = createStackNavigator()
 
@@ -33,16 +34,16 @@ const Router = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [initiated, setInitiated] = useState(false)
   const [logged, setLogged] = useState(false)
-  
+
   useEffect(() => {
     async function initialVerifications() {
       if (await isInitialized()) {
         setInitiated(true)
       }
 
-      /*if (await isLogged()) {
+      if (await isLogged()) {
         setLogged(true)
-      }*/
+      }
 
       setIsLoading(false)
     }
