@@ -1,8 +1,11 @@
 <h1 align="center">:moneybag: smartMoney :moneybag:</h1>
+<h3 align="center">Quem cuida de $1, cuida de $1 milhão</h3>
 
 <p align="center">
   <a href="#book-sobre-o-projeto">Sobre o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#pencil-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  
+  <a href="#camera-screenshot">Screenshot</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  
   <a href="#fire-como-rodar-na-sua-máquina">Como rodar na sua máquina</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#gear-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#mailbox-contato">Contato</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -12,17 +15,41 @@
 ---
 
 # :book: Sobre o projeto 
-Aplicação para controle financeiro
+SmartMoney é um aplicação com o objetivo de auxiliar na gestão financeira.<br>
+Onde o usuário pode gerenciar os gatos e investimentos cadastrando as devidas movimentação e adicionando imagens e localização das mesmas.
+
+---
+
+# :pencil: Funcionalidades
+- [x] O usuário pode selecionar o tipo de lançamento;
+- [x] Adição de gastos / investimentos futuros;
+- [x] Salvar a localização e foto do comprovante / nota fiscal;
+- [x] Filtros por dias e mês, por categorias;
+- [x] Visualização dos lançamentos por gráficos;
+
 ---
 
 # :rocket: Tecnologias
 Este projeto foi desenvolvido com as seguintes tecnologias:
 - [React Native](https://reactnative.dev)
 - [Navigation](https://reactnavigation.org)
+- [React Native Async Storage](https://react-native-async-storage.github.io/async-storage/)
+- [React Native DateTimePicker](https://github.com/react-native-datetimepicker/datetimepicker)
+- [React Native MaskedView](https://github.com/react-native-picker/picker)
 - [React Native Picker](https://github.com/react-native-picker/picker)
+- [React Native Firebase](https://rnfirebase.io)
+- [Lodash](https://lodash.com)
+- [Moment](https://momentjs.com)
+- [React Native Camera Docs](https://react-native-camera.github.io/react-native-camera/)
 
 ---
 
+# :camera: Screenshot
+<div>
+  
+</div>
+
+---
 # :fire: Como rodar na sua máquina 
 ## Condições prévias <img src="https://4.bp.blogspot.com/-7eg7Qz3UeWM/UTioF3nxNGI/AAAAAAAAPZk/7H509R6acZU/s1600/gif+aviso.gif" width="40px">
 Você precisa já ter instalado
