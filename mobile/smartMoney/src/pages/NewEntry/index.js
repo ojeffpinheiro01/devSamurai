@@ -38,7 +38,7 @@ const NewEntry = ({ route, navigation }) => {
   const [category, setCategory] = useState(currentEntry.category)
   const [entryAt, setEntryAt] = useState(
     currentEntry.entryAt
-      ? currentEntry.entryAt.calendar()
+      ? currentEntry.entryAt.toDate()
       : new Date()
   )
   const [photo, setPhoto] = useState(currentEntry.photo)
