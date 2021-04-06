@@ -14,7 +14,7 @@ import logo from '../../assets/logo-white.png'
 
 import Colors from '../../styles/colors'
 
-const SignIn = ({navigation}) => {
+const SignIn = ({ navigation }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
