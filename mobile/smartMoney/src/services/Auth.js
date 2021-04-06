@@ -37,3 +37,17 @@ export const signUp = async (data) => {
     return { registerSuccess: false }
   }
 }
+
+export const signIn = async (data) => {
+  const { email, password } = data
+
+  try {
+    const userInfos = await auth().signInWithEmailAndPassword(email, password)
+    setUserAuth(userInfos.user.uid)
+    
+    return { loginSuccess: true }
+  } catch (error) {
+    Alert.Alert('Erro ao criar tentar acessar', error.message)
+    return { loginSuccess: false }
+  }
+}

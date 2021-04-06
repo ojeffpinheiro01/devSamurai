@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 
 import { isInitialized } from '../../services/Onboarding'
+import { signIn as login } from '../../services/Auth'
 
 import logo from '../../assets/logo-white.png'
 
@@ -22,21 +23,16 @@ const SignIn = ({ navigation }) => {
   const onSubmit = async () => {
     if (loading === false) {
       setLoading(true)
-      const {loginSuccess} = await login({
-        email,
-        password,
-      })
+      const { loginSuccess } = await login({ email, password })
 
       if (loginSuccess === true) {
         const initiated = await isInitialized()
         navigation.reset({
           index: 0,
           key: null,
-          routes: [{name: initiated ? 'Main' : 'Welcome'}],
+          routes: [{ name: initiated ? 'Main' : 'Onboarding' }],
         })
-      } else {
-        setLoading(false)
-      }
+      } else { setLoading(false) }
     }
   }
 
