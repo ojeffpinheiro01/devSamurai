@@ -51,7 +51,7 @@ const Router = () => {
   })
 
   if (isLoading) {
-    return <Preloading />;
+    return <Preloading />
   }
 
   return (
