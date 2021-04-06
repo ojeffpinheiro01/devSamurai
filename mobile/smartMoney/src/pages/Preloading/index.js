@@ -1,20 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { View, StyleSheet, ActivityIndicator, StatusBar, Image } from 'react-native'
-
-import { isInitialized } from '../../services/Onboarding'
 
 import logo from '../../assets/logo-white.png'
 import Colors from '../../styles/colors'
 
-const Preloading = ({navigation}) => {
-    useEffect(() => {
-        async function makeRedirect() {
-            (await isInitialized())
-              ? navigation.navigate('Main')
-              : navigation.navigate('Onboarding')
-          }
-        makeRedirect()
-    }, [])
+const Preloading = () => {
     return (
         <View style={styles.container}>
             <StatusBar
