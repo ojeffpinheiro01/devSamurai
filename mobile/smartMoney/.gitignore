@@ -29,6 +29,9 @@ build/
 local.properties
 *.iml
 
+
+mobile/smartMoney/android/java_pid12176.hprof
+
 # node.js
 #
 node_modules/
